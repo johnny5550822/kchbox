@@ -24,4 +24,31 @@
 % example, I will demonstrate the straight forward way. It should not be
 % difficult to extend the code to use kd-tre.
 
-%% 
+%% Step 1 Creating training data (random) for 2 clusters using gaussian distribution.
+% Assuming there are two clusters with two dimenions
+
+clear all;
+clc;
+
+% parameters
+num_data = 20;
+
+% cluster 1
+mean_1 = 2;
+sigma_1 = 0.9;
+x1 = normrnd(mean_1,sigma_1,[1 num_data]);
+y1 = normrnd(mean_1,sigma_1,[1 num_data]);
+
+% cluster 1
+mean_2 = 5;
+sigma_2 = 0.9;
+x2 = normrnd(mean_2,sigma_2,[1 num_data]);
+y2 = normrnd(mean_2,sigma_2,[1 num_data]);
+
+% Plot 
+plot(x1,y1,'bo',x2,y2,'rx')
+%% Step 2 Define k
+
+
+
+
