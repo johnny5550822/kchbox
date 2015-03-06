@@ -1,0 +1,18 @@
+%% Created by King Chung Ho (Johnny Ho) in 030515
+
+
+%*****************************
+% K-nearest neighbor (KNN) is an algorithm which classify an incoming new
+% sample by looking into k nearest neighbors of the new sample. For example,
+% in a problem of classifying whether an object is an apple or not based on 
+% texture and color, if more % than 2 % out of 5 neightbors of the object is 
+% apple, then the object will be classified as an apple. 
+
+%****************************
+% The flow of KNN is below:
+
+% Step 1: Obtain training data (maybe do some preprocessing)
+% Step 2: Define k. k is arbitrary. It can be tuned by cross-validation.
+% Step 3: For a new sample, 
+
+%% 
