@@ -32,34 +32,27 @@ clc;
 
 % parameters
 num_data = 20;
-label = zeros(1,num_data*2);
 
-% ###### cluster 1
-% Define cluster
+% cluster 1
 mean_1 = 2;
 sigma_1 = 0.9;
 x1 = normrnd(mean_1,sigma_1,[1 num_data]);
 y1 = normrnd(mean_1,sigma_1,[1 num_data]);
 cluster_1 = [x1 ; y1];
-% Define label
-label(1:num_data) = 1;
 
-% ##### cluster 2
-% Define cluster
+% cluster 1
 mean_2 = 5;
 sigma_2 = 0.9;
 x2 = normrnd(mean_2,sigma_2,[1 num_data]);
 y2 = normrnd(mean_2,sigma_2,[1 num_data]);
 cluster_2 = [x2 ; y2];
-% Define label
-label(num_data+1:end) = 1;
 
 % Plot 
 plot(cluster_1(1,:),cluster_1(2,:),'bo',cluster_2(1,:),cluster_2(2,:),'rx');
 %% Step 2 Define k
 k = 4;
 
-%% Step 3 Given a testing data, find k closest neighbor.
+%% Step 3 Given a testing data, find k closest neighbor
 
 
 
