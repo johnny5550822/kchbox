@@ -10,6 +10,6 @@ Lastly, the algorithms are not fully optimized. Again, this is for entry-level l
 
 If you have any questions, feel free to email me: johnny5550822@g.ucla.edu. 
 
-FYI: I am a big fan of deep learning. I am doing research on application of deep learning in medical images.
+FYI: I am a big fan of deep learning. I am doing research on application of deep learning in medical images :).
 
 
