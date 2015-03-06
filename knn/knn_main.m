@@ -58,16 +58,40 @@ label(num_data+1:end) = 2;
 plot(cluster_1(:,1),cluster_1(:,2),'bo',cluster_2(:,1),cluster_2(:,2),'rx');
 
 %join two clusters
-j_cluster = [cluster_1 cluster_2];
+j_cluster = [cluster_1; cluster_2];
 %% Step 2 Define k
-k = 4;
+k = 5;
 
 %% Step 3 Given a test data, find k closest neighbor.
+% This part can be improved by using kd-tree. If your training dataset is
+% small, the basic implement is alright. If it is big, it will be much
+% better to use kd-tree.
+
 clc;
-test_data = [2.5 2.5];
+test_data = [5.5 2.5];
 
 % Calculate pair-wise distance between each point with the test data
-pdist2(test_data,j_cluster,'euclidean');
+D = pdist2(test_data,j_cluster,'euclidean');
 
+% ######find k nearest neighbors (To be specific, position in the array)
+% Sort the distance from small to large. The first k elements in pos is the
+% cloest neighbors
+[sorted_D,pos] = sort(D);
+neighbors_pos = pos(1:k);
 
+%% Step 4 Classify the test data by majority vote of the neighbors
+test_label = mode(label(neighbors_pos));
+
+% plot the test point, assuming binary classification
+hold on
+plot(cluster_1(:,1),cluster_1(:,2),'bo',cluster_2(:,1),cluster_2(:,2),'rx');
+if (test_label==1)
+   h = plot(test_data(1),test_data(2),'b+');
+else
+   h = plot(test_data(1),test_data(2),'r+');    
+end
+set(h,'linewidth',3);
+hold off
+
+%% DONE!
 
