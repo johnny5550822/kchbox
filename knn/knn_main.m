@@ -40,7 +40,7 @@ mean_1 = 2;
 sigma_1 = 0.9;
 x1 = normrnd(mean_1,sigma_1,[1 num_data]);
 y1 = normrnd(mean_1,sigma_1,[1 num_data]);
-cluster_1 = [x1 ; y1];
+cluster_1 = [x1 ; y1]';
 % Define label
 label(1:num_data) = 1;
 
@@ -50,17 +50,24 @@ mean_2 = 5;
 sigma_2 = 0.9;
 x2 = normrnd(mean_2,sigma_2,[1 num_data]);
 y2 = normrnd(mean_2,sigma_2,[1 num_data]);
-cluster_2 = [x2 ; y2];
+cluster_2 = [x2 ; y2]';
 % Define label
-label(num_data+1:end) = 1;
+label(num_data+1:end) = 2;
 
 % Plot 
-plot(cluster_1(1,:),cluster_1(2,:),'bo',cluster_2(1,:),cluster_2(2,:),'rx');
+plot(cluster_1(:,1),cluster_1(:,2),'bo',cluster_2(:,1),cluster_2(:,2),'rx');
+
+%join two clusters
+j_cluster = [cluster_1 cluster_2];
 %% Step 2 Define k
 k = 4;
 
-%% Step 3 Given a testing data, find k closest neighbor.
+%% Step 3 Given a test data, find k closest neighbor.
+clc;
+test_data = [2.5 2.5];
 
+% Calculate pair-wise distance between each point with the test data
+pdist2(test_data,j_cluster,'euclidean');
 
 
 
