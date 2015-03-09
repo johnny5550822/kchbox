@@ -22,8 +22,8 @@ raw_s = xlsread('combine_sys');
 systo = raw_s(:,2:end);
 
 %read label
-train_label = xlsread('label');
-train_label = train_label(:,2);
+label = xlsread('label');
+label = label(:,2);
 
 % NOTE: One possible step here is to normalize the data series for each
 % patient. However, the hypoethesis is that the magnitude of the pressure
@@ -32,17 +32,20 @@ train_label = train_label(:,2);
 %% *********************METHOD 1 Simple knn with Euclidean distance*******
 
 %% Step 1. Feature generation
-fv = generate_features_vector(dia,systo);
+fv = generate_features_vector(dia,systo);   % fv = feature vectors
 
 %% Step 2 Define k + parameter setting
 k = 5;
 
-% parameters
-num_patients = numel(train_label);
 %% Step 3 & Step 4
 clc;
-test_d = [5.5 2.5]; % test data
-test_label = kchbox_knn(k,test_d,train_d,train_label);
+split_ratio = 0.7;
+[accuracy] = simple_validation(fv,label,split_ratio,k);
+%% n-fold cross-validation. If n = number of data, it will become leave-one-out
+clc;
+n = 10;
+[accuracy] = n_fold_cross_validation(fv,label,k,n);
+
 
 %% plot the test point, assuming binary classification
 hold on
