@@ -52,8 +52,8 @@ inputSize = size(fv,2); %input size for neural network, i.e. 52
 %% Step 3. NN parameters initialization
 % weights include hidden layers, the softmax classifer weight, and the
 % biases. The network structure is 52x26x26x2
-
-theta = initializeParameters(inputSize,hiddenLayersSize,numClasses);
+clc;
+[theta,netconfig] = initializeParameters(inputSize,hiddenLayersSize,numClasses);
 
 %% Step 4. Train the neural network with a softmax(assume no bias in softmax)
 

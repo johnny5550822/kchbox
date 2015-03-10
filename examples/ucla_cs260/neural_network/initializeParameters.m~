@@ -3,15 +3,20 @@
 function theta = initializeParameters(inputSize,hiddenLayersSize,numClasses)
     % ################# For hidden layers
     % Choose weights uniformly from the interval [-r, r]
+    % Use stack to store the hidden layers parameters, good for minfunc
+    % (optimization) and multi-layer neural network implementation
+    stack = cell(2,1);
     W = {};
     b = {};
     
-    %Check if there is any hidden layers
+    %Check if there is any hidden layers. If none, then make the
+    %hiddenLayer as the input layer
     if numel(hiddenLayersSize >0)
         % for input layer to first hidden layer        
         r  = sqrt(6) / sqrt(hiddenLayersSize(1) + inputSize + 1); 
         W{1} = rand(hiddenLayersSize(1), inputSize) * 2 * r - r;
         b{1} = zeros(hiddenLayersSize(1), 1);
+        stack{1}.w = 
 
         % In between hidden layers
         for i = 2:numel(hiddenLayersSize)
@@ -22,15 +27,21 @@ function theta = initializeParameters(inputSize,hiddenLayersSize,numClasses)
             b{i} = zeros(hiddenLayersSize(i), 1);
         end
     else
-        hiddenLayersSize(end)
+        hiddenLayersSize = inputSize;
     end
 
     % ###############For Softmax; no bias
     softmaxW = 0.005 * randn(hiddenLayersSize(end) * numClasses, 1);
 
-    % Convert weights and bias gradients to the vector form, unrolling
-    theta = [softmaxW(:)];
+
+
+    % ############# Create stack for weights in hidden layer. This is
+    % useful if we want to use minfunc
     
+    
+    
+    %%%%%%%%%%%%%%%%%%%%
+        theta = [softmaxW(:)];
     for i = 1:numel(W)
         this_W = W{i}; 
         theta = [theta ; this_W(:)];

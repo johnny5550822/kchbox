@@ -1,15 +1,14 @@
-%???????????There are some problems in this code????
+% stackedAECost: Takes a trained softmaxTheta and a training data set with labels,
+% and returns cost and gradient using a stacked autoencoder model. Used for
+% backprop
+
 function [ cost, grad ] = stackedAECost(theta, inputSize, hiddenSize, ...
                                               numClasses, netconfig, ...
                                               lambda, data, labels)
                                          
-% stackedAECost: Takes a trained softmaxTheta and a training data set with labels,
-% and returns cost and gradient using a stacked autoencoder model. Used for
-% finetuning.
-                                         
 % theta: trained weights from the autoencoder
 % inputSize: the number of input units
-% hiddenSize:  the number of hidden units *at the 2nd layer*
+% hiddenSize:  the number of hidden units at the last layer
 % numClasses:  the number of categories
 % netconfig:   the network configuration of the stack
 % lambda:      the weight regularization penalty
@@ -17,21 +16,21 @@ function [ cost, grad ] = stackedAECost(theta, inputSize, hiddenSize, ...
 % labels: A vector containing labels, where labels(i) is the label for the
 % i-th training example
 
-
 %% Unroll softmaxTheta parameter
 
 % We first extract the part which compute the softmax gradient
 softmaxTheta = reshape(theta(1:hiddenSize*numClasses), numClasses, hiddenSize);
-%size = 10x20
+%size = 2x26
 
 % Extract out the "stack"
 stack = params2stack(theta(hiddenSize*numClasses+1:end), netconfig);
-%e.g. stack{1}.w =size: 20x784
-%e.g. stack{1}.b =size: 20x1
+%e.g. stack{1}.w =size: 20x52
+%e.g. stack{1}.b =size: 26x1
 
-% You will need to compute the following gradients
-softmaxThetaGrad = zeros(size(softmaxTheta));   %10(10 digit)x20(20 variable; without base)
-%size(softmaxTheta)
+% Compute the following gradients
+softmaxThetaGrad = zeros(size(softmaxTheta));   
+size(softmaxTheta)
+aa
 
 stackgrad = cell(size(stack));
 for d = 1:numel(stack)

@@ -1,3 +1,5 @@
+% This function is obtained from UFLDL tutorial
+
 function [params, netconfig] = stack2params(stack)
 
 % Converts a "stack" structure into a flattened parameter vector and also
