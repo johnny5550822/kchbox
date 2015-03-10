@@ -6,9 +6,11 @@
 
 % Output: evaluation measurements, such as accuracy 
 
+% Note, the output is the combined statistics (not average) based on a
+% combined confusion matric
 
-function [a_avg,a_std,sen_avg,sen_std,spec_avg,spec_std,p_avg,p_std,...
-    r_avg,r_std,f_avg,f_std,confusion_matrix] = n_fold_cross_validation(fv, label, k , n)
+function [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix] ...
+    = n_fold_cross_validation(fv, label, k , n)
     % parameters
     num_patients = numel(label);
     factor = round(num_patients/n);
@@ -21,12 +23,6 @@ function [a_avg,a_std,sen_avg,sen_std,spec_avg,spec_std,p_avg,p_std,...
     % n-fold cross validation,e.g. n=10
     % in each fold, calculate the evaluation matrices, and then average
     % everything at the end
-    accuracies = zeros(1,n); % to store the list of accuracies for cross validation
-    sensitivities = zeros(1,n);
-    specificities = zeros(1,n);
-    precisions = zeros(1,n);
-    recalls = zeros(1,n);
-    f_measures = zeros(1,n);
     confusion_matrice = zeros(2,2,n);
     for nn = 1:n
         nn;
@@ -56,27 +52,15 @@ function [a_avg,a_std,sen_avg,sen_std,spec_avg,spec_std,p_avg,p_std,...
         % Generate evaluation matrice, such as accuracy
         %validation_label
         %pred_validation
-        [accuracy,sensitivity,specificity,precision,recall,...
-        f_measure,confusion_matrix] = evaluation_matrice(validation_label,pred_validation);
+        [confusion_matrix] = get_confusion_matrix(validation_label,pred_validation);
         
         % update evaluation
-        accuracies(nn) = accuracy;
-        sensitivities(nn) = sensitivity;
-        specificities(nn) = specificity;
-        precisions(nn) = precision;
-        recalls(nn) = recall;
-        f_measures(nn) = f_measure;
         confusion_matrice(:,:,nn) = confusion_matrix;
     end
     
-    % Calculate average performance
-    [a_avg, a_std] = get_mean_std(accuracies);
-    [sen_avg,sen_std] = get_mean_std(sensitivities);
-    [spec_avg,spec_std] = get_mean_std(specificities);
-    [p_avg,p_std] = get_mean_std(precisions);
-    [r_avg,r_std] = get_mean_std(recalls);
-    [f_avg,f_std] = get_mean_std(f_measures);
+    %Calculate evaluation measures
     confusion_matrix = sum(confusion_matrice,3);
-    
+    [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix] = ...
+        get_evaluation_matrice(confusion_matrix);
 
 end

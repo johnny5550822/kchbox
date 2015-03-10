@@ -3,13 +3,14 @@
 
 % Output: evaluation measurements, such as accuracy 
 
-function accuracy = simple_validation(fv, label, split_ratio, k)
+function [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix] ...
+    = simple_validation(fv, label, split_ratio, k)
     % parameters
     accuracy = 0;
     num_patients = numel(label);
     
     % split data (randomly arranged) based on ratio
-    breakpoint = round(num_patients * split_ratio)
+    breakpoint = round(num_patients * split_ratio);
     rand_pos = randperm(num_patients);
     
     train_data = fv(rand_pos(1:breakpoint),:);
@@ -25,10 +26,10 @@ function accuracy = simple_validation(fv, label, split_ratio, k)
     end
     
     % Generate evaluation matrice, such as accuracy
-    validation_label
-    pred_validation
-    [accuracy,sensitivity,specificity,preicsion,recall,...
-        f_measure,confusion_matrix] = evaluation_matrice(validation_label,pred_validation);
-
+    validation_label;
+    pred_validation;
+    [confusion_matrix] = get_confusion_matrix(validation_label,pred_validation);
+    [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix] = ...
+        get_evaluation_matrice(confusion_matrix);
 
 end

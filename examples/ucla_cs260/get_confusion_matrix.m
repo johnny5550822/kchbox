@@ -1,6 +1,6 @@
-% Evalation matrices for the classifier performance
+% Returns a confusion matrix
 
-function [accuracy] = evaluation_matrice(true_label,pred_label)
+function [confusion_matrix] = get_confusion_matrix(true_label,pred_label)
     %parameters
     num_data = numel(true_label);
     tp = 0;
@@ -26,14 +26,15 @@ function [accuracy] = evaluation_matrice(true_label,pred_label)
     
     %matrices
     accuracy = (tp+tn)/num_data;
-    sensitivty = tp/(tp+fn);
+    sensitivity = tp/(tp+fn);
     specificity = tn/(tn+fp);
     precision = tp/(tp+fp);
     recall = tp/(tp+fn);
     f_measure = 2*(precision*recall)/(precision+recall);
-    confusion m
-    
-    
+    confusion_matrix = [tp fp;fn tn];
+    mcc = (tp*tn-fp*fn)/sqrt((tp+fp)*(tp+fn)*(tn+fp)*(tn+fn));
+    %roc %<-- this depends on the classifier and have to change the
+    %threshold    
 end
 
 
