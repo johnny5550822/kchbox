@@ -44,7 +44,7 @@ split_ratio = 0.7;
 %% n-fold cross-validation. If n = number of data, it will become leave-one-out
 clc;
 n = 10;
-[acc,sen,spec,pre,recall,f_measure,mcc] = n_fold_cross_validation(fv,label,k,n);
+[acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix] = n_fold_cross_validation_knn(fv,label,k,n);
 
 disp(sprintf('confusion_matrix:'));
 disp(confusion_matrix)

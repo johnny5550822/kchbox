@@ -29,6 +29,7 @@ beta = 3;              % weight of sparsity penalty term
 
 %add functions path
 addpath neural_network
+addpath neural_network/minFunc/
 %% Step 1 Load data
 
 clc;
@@ -51,55 +52,26 @@ label = label + 1;
 %% Step 2. Feature generation
 fv = generate_features_vector(dia,systo);   % fv = feature vectors
 
-inputSize = size(fv,2); %input size for neural network, i.e. 52
-%% Step 3. NN parameters initialization
-% weights include hidden layers, the softmax classifer weight, and the
-% biases. The network structure is 52x26x26x2
+%%
+kchbox_nn(fv,fv,label,numClasses,hiddenLayersSize,...
+    sparsityParam,lambda,beta)
+
+%% Step 3. n-fold cross-validation. If n = number of data, it will become leave-one-out
 clc;
-[theta,netconfig] = initializeParameters(inputSize,hiddenLayersSize,numClasses);
+n = 10;
+[acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix] = n_fold_cross_validation_nn(fv,label,n,...
+    numClasses,hiddenLayersSize,sparsityParam,lambda,beta);
 
-%% Step 4. Train the neural network with a softmax(assume no bias in softmax)
+disp(sprintf('confusion_matrix:'));
+disp(confusion_matrix)
+disp(sprintf('Accuracy:%f',acc));
+disp(sprintf('Sentivity:%f',sen));
+disp(sprintf('Specificity:%f',spec));
+disp(sprintf('Precision:%f',pre));
+disp(sprintf('Recall:%f',recall));
+disp(sprintf('F-measure:%f',f_measure));
+disp(sprintf('MCC:%f',mcc));
 
-%% Step 4.1 Check the cost function and see if it is correct
-clc;
-addpath neural_network/sparse_autoencoder/
 
-[cost,grad] = NNCost(theta,inputSize,hiddenLayersSize,numClasses,...
-     netconfig,lambda,fv,label);
-
-DEBUG = false
-if DEBUG
-    checkNNCost;
-end
-
-%% Step 4.2 optimize the theta using minfunc (which is a gradient descent algorithm)
-clc;
-addpath neural_network/minFunc/
-
-%  Use minFunc to minimize the function
-options.HessUpate = 'lbfgs'; % Here, we use L-BFGS to optimize our cost
-                          % function. Generally, for minFunc to work, you
-                          % need a function pointer with two outputs: the
-                          % function value and the gradient. In our problem,
-                          % sparseAutoencoderCost.m satisfies this.
-options.MaxIter = 100;	  % Maximum number of iterations of L-BFGS to run 
-options.Display = 'iter';
-options.GradObj = 'on';
-
-[optTheta, cost] = minFunc( @(p) NNCost(p, ...
-                                   inputSize, hiddenLayersSize, ...
-                                   numClasses, netconfig, ...
-                                   lambda, fv, label), ...
-                              theta, options);
-
-%% Step 5: Test: using cross validation
-clc;
-
-[pred] = NNPredict(optTheta, inputSize, hiddenLayersSize, ...
-                          numClasses, netconfig, fv');                       
-
-% evaluation
-acc = mean(label(:) == pred(:));
-fprintf('Accuracy: %0.3f%%\n', acc * 100);
 
 

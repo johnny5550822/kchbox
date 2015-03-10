@@ -1,8 +1,10 @@
-% n-fold cross validation. Split the data into n sets. Take out (n-1) and
+% n-fold cross validation for neural network. Split the data into n sets. Take out (n-1) and
 % build classifier and test it using the remaining 1 set. Repeat the
 % process for each subset one time.
 
 % If n = number of data, it will become leave-one-out analysis
+
+% Input: accept multiple test data in matrix
 
 % Output: evaluation measurements, such as accuracy 
 
@@ -10,7 +12,9 @@
 % combined confusion matric
 
 function [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix] ...
-    = n_fold_cross_validation(fv, label, k , n)
+    = n_fold_cross_validation_nn(fv, label, n, numClasses,hiddenLayersSize,...
+    sparsityParam,lambda,beta)
+
     % parameters
     num_patients = numel(label);
     factor = round(num_patients/n);
@@ -45,10 +49,9 @@ function [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix] ...
         % prediction
         [num_validation] = size(validation_data,1);
         pred_validation = zeros(1,num_validation);
-        for i = 1:num_validation
-            pred_validation(i) = kchbox_knn(k,validation_data(i,:),train_data,train_label);        
-        end
-    
+        pred_validation = kchbox_nn(validation_data,train_data,train_label, ...
+            numClasses,hiddenLayersSize, sparsityParam,lambda,beta)
+        
         % Generate evaluation matrice, such as accuracy
         %validation_label
         %pred_validation
@@ -57,7 +60,7 @@ function [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix] ...
         % update evaluation
         confusion_matrice(:,:,nn) = confusion_matrix;
     end
-    
+
     %Calculate evaluation measures
     confusion_matrix = sum(confusion_matrice,3);
     [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix] = ...

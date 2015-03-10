@@ -2,7 +2,8 @@
 % matrix
 
 function [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix] ... 
-    =get_evaluation_matrice(confusion_matrix);
+    =get_evaluation_matrice(confusion_matrix)
+    
     tp = confusion_matrix(1,1);
     tn = confusion_matrix(2,2);
     fp = confusion_matrix(1,2);
