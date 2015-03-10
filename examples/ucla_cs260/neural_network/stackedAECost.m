@@ -85,9 +85,7 @@ end
 % last hidden layer to softmax. Need to do something because I assume no
 % bias for softmax
 a_i{end} = a_i{end}(2:end,:);   %remove the bias
-size(softmaxTheta)
-size(a_i{end})
-z_i{end+1} = softmaxTheta * a_i{end};
+% z_i{end+1} = softmaxTheta * a_i{end};
 
 %###################################
 z_2 = W_b1*data'; %20*11
@@ -101,8 +99,6 @@ a_3 = sigmoid(z_3); %20x11(20 unit;11 examples)
 % %necessary
 
 %3rd layer to softmax
-size(softmaxTheta)
-size(a_3)
 z_4 = softmaxTheta*a_3; %10x11
 %size(z_4)
 % size(softmaxTheta) %10x20
@@ -117,47 +113,89 @@ simple_cost = -1/M*sum(sum(each_k,1));
 cost = simple_cost+regularization;
 
 % #######calculate cost (CORRECT)
-hypothesis = calculate_hypothesis(softmaxTheta,a_3);  %10x11
-each_k = groundTruth.*log(hypothesis); %the inner summation of the cost with respect to k
-regularization = lambda/2 * sum(sum(softmaxTheta.^2));
-simple_cost = -1/M*sum(sum(each_k,1));
-cost = simple_cost+regularization;
+% hypothesis = calculate_hypothesis(softmaxTheta,a_3);  %10x11
+% each_k = groundTruth.*log(hypothesis); %the inner summation of the cost with respect to k
+% regularization = lambda/2 * sum(sum(softmaxTheta.^2));
+% simple_cost = -1/M*sum(sum(each_k,1));
+% cost = simple_cost+regularization;
 
 % #######calculate thetagrad for softmax
 difference = groundTruth - hypothesis;  %10x11
 %tri_thetagrad = softmaxTheta(:,2:end)' * difference; %20x11; 
-simple_thetagrad = -1/M*(difference * a_3');    %10x20
+simple_thetagrad = -1/M*(difference * a_i{end}');    %10x20
 regularization_grad = lambda * softmaxTheta; 
 thetagrad = simple_thetagrad + regularization_grad; %10(digit)x20(parameters)
 
+% % #######calculate thetagrad for softmax
+% difference = groundTruth - hypothesis;  %10x11
+% %tri_thetagrad = softmaxTheta(:,2:end)' * difference; %20x11; 
+% simple_thetagrad = -1/M*(difference * a_3');    %10x20
+% regularization_grad = lambda * softmaxTheta; 
+% thetagrad = simple_thetagrad + regularization_grad; %10(digit)x20(parameters)
+
 %------------------------------Step2: backpropagation
-%size(softmaxTheta' * difference); %20x11
-%size(sigmoidGradient(z_4))  %10x11
+delta = cell(1,numel(hiddenLayersSize));    %size equal to the number of hidden layers
+
+%for last layer
+delta{end} = -(softmaxTheta' *difference).* sigmoidGradient(z_i{end});
+% for other layers until the second layer
+for i = numel(hiddenLayersSize):-1:2
+    delta{i-1} = (W_b{i}(:,2:end)'*delta{i}).*sigmoidGradient(z_i{i});
+    
+end
+
+%###############
 delta_last = -(softmaxTheta' *difference).* sigmoidGradient(z_3); %10(parameters)x11
         %<-- at layer 3
 delta_2 = (W_b2(:,2:end)'*delta_last).*sigmoidGradient(z_2); %20x11
         %<--- at layer 2 
+%######################
 
+%change in gradient
+tri = cell(1,numel(hiddenLayersSize)); 
+for i = numel(hiddenLayersSize):-1:1
+
+    tri{i} = delta{i} * a_i{i}';
+end
+
+
+%###############
 tri_2 = delta_last*a_2';   %20x21  
 tri_1 = delta_2*data;   %20x785
+%######################
 
 %-----------------------------Step3: Update
-% DO not regularized the bias term
-Theta1_grad = 1/M*tri_1;  %size=20*785
-Theta2_grad = 1/M*tri_2;  %size=20*21
+% Do not need to regularize bias term
+theta_grad = {};
+for i = 1:numel(tri)
+    theta_grad{i} = 1/M * tri{i};
+end
 
-% no regularization on the bias term
-% Theta1_grad(:,1) = Theta1_grad(:,1) - lambda*W_b1(:,1);
-% Theta2_grad(:,1) = Theta2_grad(:,1) - lambda*W_b2(:,1);
 
-%Assign value
-stackgrad{1}.w = Theta1_grad(:,2:end);
-stackgrad{2}.w = Theta2_grad(:,2:end);
-stackgrad{1}.b = Theta1_grad(:,1);
-stackgrad{2}.b = Theta2_grad(:,1);
+% assign value
+for i = 1:numel(stackgrad)
+    stackgrad{i}.w = theta_grad{i}(:,2:end);
+    stackgrad{i}.b = theta_grad{i}(:,1);
+end
 softmaxThetaGrad = thetagrad;
 
+%###################################################
+% DO not regularized the bias term
+% Theta1_grad = 1/M*tri_1;  %size=20*785
+% Theta2_grad = 1/M*tri_2;  %size=20*21
+% 
+% % no regularization on the bias term
+% % Theta1_grad(:,1) = Theta1_grad(:,1) - lambda*W_b1(:,1);
+% % Theta2_grad(:,1) = Theta2_grad(:,1) - lambda*W_b2(:,1);
+% 
+% %Assign value
+% stackgrad{1}.w = Theta1_grad(:,2:end);
+% stackgrad{2}.w = Theta2_grad(:,2:end);
+% stackgrad{1}.b = Theta1_grad(:,1);
+% stackgrad{2}.b = Theta2_grad(:,1);
+% softmaxThetaGrad = thetagrad;
 
+%###################################################
 
 
 
