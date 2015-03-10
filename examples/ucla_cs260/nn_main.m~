@@ -60,7 +60,7 @@ theta = initializeParameters(inputSize,hiddenLayersSize,numClasses);
 %% Step 4.1 Check the cost function and see if it is correct
 clc;
 
-[cost,grad] = stackedAECost(theta,inputSize,hiddenLayersSize(end),numClasses,...
+[cost,grad] = stackedAECost(theta,inputSize,hiddenSizeL2,numClasses,...
     netconfig,lambda,fv,label);
 
 DEBUG = false;

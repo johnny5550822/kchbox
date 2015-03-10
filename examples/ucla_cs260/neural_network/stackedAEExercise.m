@@ -16,24 +16,6 @@
 %  change the code in this file. 
 %
 %%======================================================================
-%% STEP 0: Here we provide the relevant parameters values that will
-%  allow your sparse autoencoder to get good filters; you do not need to 
-%  change the parameters below.
-clear all;
-clc;
-
-inputSize = 28 * 28;
-numClasses = 10;
-hiddenSizeL1 = 200;    % Layer 1 Hidden Size
-hiddenSizeL2 = 200;    % Layer 2 Hidden Size
-
-sparsityParam = 0.1;   % desired average activation of the hidden units.
-                       % (This was denoted by the Greek alphabet rho, which looks like a lower-case "p",
-		               %  in the lecture notes). 
-lambda = 3e-3;         % weight decay parameter       
-beta = 3;              % weight of sparsity penalty term       
-
-%%======================================================================
 %% STEP 1: Load data from the MNIST database
 %
 %  This loads our training data from the MNIST database files.
