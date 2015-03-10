@@ -64,12 +64,12 @@ clc;
 clc;
 addpath neural_network/sparse_autoencoder/
 
-[cost,grad] = stackedAECost(theta,inputSize,hiddenLayersSize,numClasses,...
+[cost,grad] = NNCost(theta,inputSize,hiddenLayersSize,numClasses,...
      netconfig,lambda,fv,label);
 
-DEBUG = false;
+DEBUG = false
 if DEBUG
-    checkStackedAECost;
+    checkNNCost;
 end
 
 %% Step 4.2 optimize the theta using minfunc (which is a gradient descent algorithm)
@@ -86,7 +86,7 @@ options.MaxIter = 100;	  % Maximum number of iterations of L-BFGS to run
 options.Display = 'iter';
 options.GradObj = 'on';
 
-[optTheta, cost] = minFunc( @(p) stackedAECost(p, ...
+[optTheta, cost] = minFunc( @(p) NNCost(p, ...
                                    inputSize, hiddenLayersSize, ...
                                    numClasses, netconfig, ...
                                    lambda, fv, label), ...
@@ -95,7 +95,7 @@ options.GradObj = 'on';
 %% Step 5: Test: using cross validation
 clc;
 
-[pred] = stackedAEPredict(optTheta, inputSize, hiddenLayersSize, ...
+[pred] = NNPredict(optTheta, inputSize, hiddenLayersSize, ...
                           numClasses, netconfig, fv');                       
 
 % evaluation

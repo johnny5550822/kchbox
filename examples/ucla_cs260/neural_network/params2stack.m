@@ -1,7 +1,7 @@
-function stack = params2stack(params, netconfig)
+% This function is obtained from UFLDL tutorial
 
 % Converts a flattened parameter vector into a nice "stack" structure 
-% for us to work with. This is useful when you're building multilayer
+% for us to work with. This is useful when building multilayer
 % networks.
 %
 % stack = params2stack(params, netconfig)
@@ -11,6 +11,7 @@ function stack = params2stack(params, netconfig)
 %             the configuration of the network
 %
 
+function stack = params2stack(params, netconfig)
 
 % Map the params (a vector into a stack of weights)
 depth = numel(netconfig.layersizes);

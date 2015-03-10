@@ -1,7 +1,5 @@
 % This function is obtained from UFLDL tutorial
 
-function [params, netconfig] = stack2params(stack)
-
 % Converts a "stack" structure into a flattened parameter vector and also
 % stores the network configuration. This is useful when working with
 % optimization toolboxes such as minFunc.
@@ -14,6 +12,7 @@ function [params, netconfig] = stack2params(stack)
 %                                    stack{2}.b = weights of second layer
 %                                    ... etc.
 
+function [params, netconfig] = stack2params(stack)
 
 % Setup the compressed param vector
 params = [];
