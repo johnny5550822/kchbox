@@ -40,23 +40,12 @@ k = 5;
 %% Step 3 & Step 4
 clc;
 split_ratio = 0.7;
-[accuracy] = simple_validation(fv,label,split_ratio,k);
+[accuracy,] = simple_validation(fv,label,split_ratio,k);
 %% n-fold cross-validation. If n = number of data, it will become leave-one-out
 clc;
 n = 10;
-[accuracy] = n_fold_cross_validation(fv,label,k,n);
+[accuracy,accuracy_std] = n_fold_cross_validation(fv,label,k,n)
 
-
-%% plot the test point, assuming binary classification
-hold on
-plot(cluster_1(:,1),cluster_1(:,2),'bo',cluster_2(:,1),cluster_2(:,2),'rx');
-if (test_label==1)
-   h = plot(test_d(1),test_d(2),'b+');
-else
-   h = plot(test_d(1),test_d(2),'r+');    
-end
-set(h,'linewidth',3);
-hold off
 
 %% DONE!
 
