@@ -45,6 +45,9 @@ systo = raw_s(:,2:end);
 label = xlsread('label');
 label = label(:,2);
 
+% start label from 1, not 0
+label = label + 1;
+
 %% Step 2. Feature generation
 fv = generate_features_vector(dia,systo);   % fv = feature vectors
 
@@ -59,11 +62,12 @@ clc;
 
 %% Step 4.1 Check the cost function and see if it is correct
 clc;
+addpath neural_network/sparse_autoencoder/
 
 [cost,grad] = stackedAECost(theta,inputSize,hiddenLayersSize(end),numClasses,...
     netconfig,lambda,fv,label);
 
-DEBUG = false;
+DEBUG = true;
 if DEBUG
     checkStackedAECost;
 end

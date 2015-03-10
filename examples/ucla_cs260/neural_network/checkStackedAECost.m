@@ -10,7 +10,7 @@ function [] = checkStackedAECost()
 inputSize = 4;
 hiddenSize = 5;
 lambda = 0.01;
-data   = randn(inputSize, 5);
+data   = randn(5,inputSize);
 labels = [ 1 2 1 2 1 ];
 numClasses = 2;
 
