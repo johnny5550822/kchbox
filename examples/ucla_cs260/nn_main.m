@@ -64,13 +64,32 @@ clc;
 clc;
 addpath neural_network/sparse_autoencoder/
 
-% [cost,grad] = stackedAECost(theta,inputSize,hiddenLayersSize,numClasses,...
-%     netconfig,lambda,fv,label);
+[cost,grad] = stackedAECost(theta,inputSize,hiddenLayersSize,numClasses,...
+     netconfig,lambda,fv,label);
 
-DEBUG = true;
+DEBUG = false;
 if DEBUG
     checkStackedAECost;
 end
 
+%% Step 4.2 optimize the theta using minfunc (which is a gradient descent algorithm)
+clc;
+addpath neural_network/minFunc/
+
+%  Use minFunc to minimize the function
+options.HessUpate = 'lbfgs'; % Here, we use L-BFGS to optimize our cost
+                          % function. Generally, for minFunc to work, you
+                          % need a function pointer with two outputs: the
+                          % function value and the gradient. In our problem,
+                          % sparseAutoencoderCost.m satisfies this.
+options.MaxIter = 100;	  % Maximum number of iterations of L-BFGS to run 
+options.Display = 'iter';
+options.GradObj = 'on';
+
+[optTheta, cost] = minFunc( @(p) stackedAECost(p, ...
+                                   inputSize, hiddenLayersSize, ...
+                                   numClasses, netconfig, ...
+                                   lambda, fv, label), ...
+                              theta, options);
 
 

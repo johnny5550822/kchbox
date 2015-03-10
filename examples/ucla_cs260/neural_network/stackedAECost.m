@@ -82,9 +82,10 @@ a_i{end} = a_i{end}(2:end,:);   %remove the bias
 % z_i{end+1} = softmaxTheta * a_i{end};
 
 % #######calculate cost (CORRECT)
-hypothesis = calculate_hypothesis(softmaxTheta,a_i{end});  
+hypothesis = calculate_hypothesis(softmaxTheta,a_i{end});
 each_k = groundTruth.*log(hypothesis); %the inner summation of the cost with respect to k
 regularization = lambda/2 * sum(sum(softmaxTheta.^2));
+
 simple_cost = -1/M*sum(sum(each_k,1));
 cost = simple_cost+regularization;
 
