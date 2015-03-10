@@ -40,12 +40,15 @@ k = 5;
 %% Step 3 & Step 4
 clc;
 split_ratio = 0.7;
-[accuracy] = simple_validation(fv,label,split_ratio,k);
+[accuracy,] = simple_validation(fv,label,split_ratio,k);
 %% n-fold cross-validation. If n = number of data, it will become leave-one-out
 clc;
 n = 10;
-[accuracy] = n_fold_cross_validation(fv,label,k,n);
+[a_avg,a_std,sen_avg,sen_std,spec_avg,spec_std,p_avg,p_std,...
+    r_avg,r_std,f_avg,f_std,confusion_matrix] = n_fold_cross_validation(fv,label,k,n);
 
-
+disp(sprintf('Accuracy:%f +-',a_avg,a_std));
+disp(sprintf('Sentivity:%f +-',sen_avg,sen_std));
+disp(sprintf('Accuracy:%f +-',a_avg,a_std));
 %% DONE!
 

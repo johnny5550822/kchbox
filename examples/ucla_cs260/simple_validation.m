@@ -27,7 +27,8 @@ function accuracy = simple_validation(fv, label, split_ratio, k)
     % Generate evaluation matrice, such as accuracy
     validation_label
     pred_validation
-    [accuracy] = evaluation_matrice(validation_label,pred_validation);
+    [accuracy,sensitivity,specificity,preicsion,recall,...
+        f_measure,confusion_matrix] = evaluation_matrice(validation_label,pred_validation);
 
 
 end
