@@ -1,4 +1,4 @@
-function [pred] = stackedAEPredict(theta, inputSize, hiddenSize, numClasses, netconfig, data)
+function [pred] = stackedAEPredict(theta, inputSize, hiddenLayersSize, numClasses, netconfig, data)
                                          
 % stackedAEPredict: Takes a trained theta and a test data set,
 % and returns the predicted labels for each example.
@@ -13,6 +13,8 @@ function [pred] = stackedAEPredict(theta, inputSize, hiddenSize, numClasses, net
 % pred, where pred(i) is argmax_c P(y(c) | x(i)).
  
 %% Unroll theta parameter
+
+hiddenSize = hiddenLayersSize(end);
 
 % We first extract the part which compute the softmax gradient
 softmaxTheta = reshape(theta(1:hiddenSize*numClasses), numClasses, hiddenSize);
@@ -44,9 +46,3 @@ pred = pos;
 % -----------------------------------------------------------
 
 end
-
-
-% % You might find this useful
-% function sigm = sigmoid(x)
-%     sigm = 1 ./ (1 + exp(-x));
-% end

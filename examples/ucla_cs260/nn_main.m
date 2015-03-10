@@ -92,4 +92,14 @@ options.GradObj = 'on';
                                    lambda, fv, label), ...
                               theta, options);
 
+%% Step 5: Test: using cross validation
+clc;
+
+[pred] = stackedAEPredict(optTheta, inputSize, hiddenLayersSize, ...
+                          numClasses, netconfig, fv');                       
+
+% evaluation
+acc = mean(label(:) == pred(:));
+fprintf('Accuracy: %0.3f%%\n', acc * 100);
+
 
