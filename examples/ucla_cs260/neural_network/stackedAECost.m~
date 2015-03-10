@@ -57,12 +57,8 @@ a_i = {};
 for d = 1:numel(stack)
     W_b{d} = [stack{d}.b stack{d}.w];    
 end
-
-%###################################
-W_b1 = [stack{1}.b stack{1}.w]; %20x785
-W_b2 = [stack{2}.b stack{2}.w]; %20x21
-%###################################
-
+% W_b1 = [stack{1}.b stack{1}.w]; %20x785
+% W_b2 = [stack{2}.b stack{2}.w]; %20x21
 
 % Add bias to data
 data = [ones(size(data, 1), 1) data];   %11x785
@@ -85,11 +81,8 @@ end
 % last hidden layer to softmax. Need to do something because I assume no
 % bias for softmax
 a_i{end} = a_i{end}(2:end,:);   %remove the bias
-size(softmaxTheta)
-size(a_i{end})
-z_i{end+1} = softmaxTheta * a_i{end};
 
-%###################################
+
 z_2 = W_b1*data'; %20*11
 a_2 = sigmoid(z_2); %20*11
 a_2 = [ones(1,size(data,1)) ; a_2]; %21x11
@@ -101,20 +94,10 @@ a_3 = sigmoid(z_3); %20x11(20 unit;11 examples)
 % %necessary
 
 %3rd layer to softmax
-size(softmaxTheta)
-size(a_3)
 z_4 = softmaxTheta*a_3; %10x11
 %size(z_4)
 % size(softmaxTheta) %10x20
 % size(a_3)
-%######################################
-
-% #######calculate cost (CORRECT)
-hypothesis = calculate_hypothesis(softmaxTheta,a_i{end});  
-each_k = groundTruth.*log(hypothesis); %the inner summation of the cost with respect to k
-regularization = lambda/2 * sum(sum(softmaxTheta.^2));
-simple_cost = -1/M*sum(sum(each_k,1));
-cost = simple_cost+regularization;
 
 % #######calculate cost (CORRECT)
 hypothesis = calculate_hypothesis(softmaxTheta,a_3);  %10x11

@@ -1,10 +1,13 @@
-% Check the gradients for the NN
-
 function [] = checkStackedAECost()
 
-% Setup random data / small model
+% Check the gradients for the stacked autoencoder
+%
+% In general, we recommend that the creation of such files for checking
+% gradients when you write new cost functions.
+%
+
+%% Setup random data / small model
 inputSize = 4;
-hiddenSize = 5; %last layer
 hiddenLayersSize = [3 5];
 lambda = 0.01;
 data   = randn(5,inputSize);
@@ -12,7 +15,7 @@ labels = [ 1 2 1 2 1 ];
 numClasses = 2;
 
 stack = cell(2,1);
-stack{1}.w = 0.1 * randn(3, inputSize);
+stack{1}.w = 0.1 * randn(3, inputSize); % 3 is the mid
 stack{1}.b = zeros(3, 1);
 stack{2}.w = 0.1 * randn(hiddenSize, 3);
 stack{2}.b = zeros(hiddenSize, 1);

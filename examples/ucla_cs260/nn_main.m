@@ -64,8 +64,8 @@ clc;
 clc;
 addpath neural_network/sparse_autoencoder/
 
-[cost,grad] = stackedAECost(theta,inputSize,hiddenLayersSize(end),numClasses,...
-    netconfig,lambda,fv,label);
+% [cost,grad] = stackedAECost(theta,inputSize,hiddenLayersSize,numClasses,...
+%     netconfig,lambda,fv,label);
 
 DEBUG = true;
 if DEBUG
