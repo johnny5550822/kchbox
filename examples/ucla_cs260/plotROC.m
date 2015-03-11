@@ -1,6 +1,6 @@
 % Plot ROC curve of the classifier by varying the threshold
 
-function plotROC(probs,true_label)
+function hh = plotROC(probs,true_label)
     probs = probs(2,:); % only interested in prediction of yes (i.e., 2)
 
     % Get the values for each class
@@ -26,7 +26,7 @@ function plotROC(probs,true_label)
 
     %Plot ROC
     figure;
-    y = plot(neg_ROC,pos_ROC,'x-');
+    hh = plot(neg_ROC,pos_ROC,'x-');
     title(strcat('ROC curves for'));
     xlabel('False Alarm');
     ylabel('TPR');
