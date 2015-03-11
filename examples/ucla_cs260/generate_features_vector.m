@@ -23,5 +23,7 @@ function fv = generate_features_vector(dia,systo)
     
     fv = [fv ff1 ff2 ff3 ff4];
 
+    % normalize to range between 0 and 1
+    fv = (fv - repmat(min(fv),[size(fv,1) 1]))./repmat((max(fv)-min(fv)),[size(fv,1) 1]);
 
 end
