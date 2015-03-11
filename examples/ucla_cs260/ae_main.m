@@ -16,7 +16,7 @@ clc;
 % inputSize = 26 * 2; % time-series + two parameters <--define later,
 % depends on the feature set
 numClasses = 2;
-hiddenSize = [5]; % one have one layer since it is an autoencoder
+hiddenSize = [20]; % one have one layer since it is an autoencoder
 
 sparsityParam = 0.1;   % desired average activation of the hidden units.                        
 lambda = 3e-5;         % weight decay parameter       

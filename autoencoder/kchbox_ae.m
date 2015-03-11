@@ -71,12 +71,10 @@ hiddenSizeWithBase = hiddenSize+1;
 softmaxModel = softmaxTrain(hiddenSizeWithBase, numClasses, softmax_lambda, ...
                             trainFeatures, label, options);
 %--------------------------------- Step 7: Test
-%Assign test features (activation) to inputData
-inputData = testFeatures;
 % inputData = testData;
-inputData = [ones(1,size(inputData,2));inputData]; %for base
+testFeatures = [ones(1,size(testFeatures,2));testFeatures]; %for base
 
 % You will have to implement softmaxPredict in softmaxPredict.m
-[pred, prob] = softmaxPredict(softmaxModel, inputData);
+[pred, prob] = softmaxPredict(softmaxModel, testFeatures);
 
 end
