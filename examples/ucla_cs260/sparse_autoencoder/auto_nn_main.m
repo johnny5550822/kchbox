@@ -10,12 +10,12 @@ clc;
 % inputSize = 26 * 2; % time-series + two parameters <--define later,
 % depends on the feature set
 numClasses = 2;
-hiddenSize = [16]; % one have one layer since it is an autoencoder
+hiddenSize = [5]; % one have one layer since it is an autoencoder
 
 sparsityParam = 0.1;   % desired average activation of the hidden units.
                        % (This was denoted by the Greek alphabet rho, which looks like a lower-case "p",
 		               %  in the lecture notes). 
-lambda = 3e-2;         % weight decay parameter       
+lambda = 3e-5;         % weight decay parameter       
 beta = 3;              % weight of sparsity penalty term       
 
 %add functions path
@@ -49,21 +49,16 @@ inputSize = size(fv,2);
 theta = initializeParameters_sa(hiddenSize, inputSize);
 
 %%======================================================================
-%% STEP 2: Implement sparseAutoencoderCost
-
+%% STEP 2 & 3: Implement sparseAutoencoderCost & Gradient Checking
 clc;
-[cost, grad] = sparseAutoencoderCost(theta, inputSize, hiddenSize, lambda, ...
-                                     sparsityParam, beta, fv);
-
-%%======================================================================
-%% STEP 3: Gradient Checking
 
 Debug = false;
-
 if Debug
+    [cost, grad] = sparseAutoencoderCost(theta, inputSize, hiddenSize, lambda, ...
+                                     sparsityParam, beta, fv);
+
     % Check if the the computeNumerical Gradient returns correct values for simple
     % gradients
-    clc;
     checkNumericalGradient();
 
     % Check your cost function and derivative calculations
@@ -82,9 +77,6 @@ if Debug
 end
 %%======================================================================
 %% Step4 Train an autoencoder
-
-%  Randomly initialize the parameters
-theta = initializeParameters_sa(hiddenSize, inputSize);
 
 %  Use minFunc to minimize the function
 addpath minFunc/
