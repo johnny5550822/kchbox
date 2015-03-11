@@ -24,6 +24,7 @@ systo = raw_s(:,2:end);
 %read label
 label = xlsread('label');
 label = label(:,2);
+label = label+1;
 
 % NOTE: One possible step here is to normalize the data series for each
 % patient. However, the hypoethesis is that the magnitude of the pressure
@@ -35,14 +36,13 @@ label = label(:,2);
 fv = generate_features_vector(dia,systo);   % fv = feature vectors
 
 %% Step 2 Define k + parameter setting
-k = 5;
+k = 4;
 
 %% Step 3 & Step 4
-clc;
 split_ratio = 0.7;
 [accuracy] = simple_validation(fv,label,split_ratio,k);
 %% n-fold cross-validation. If n = number of data, it will become leave-one-out
-clc;
+
 n = 10;
 [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix] = n_fold_cross_validation_knn(fv,label,k,n);
 

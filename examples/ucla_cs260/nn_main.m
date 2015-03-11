@@ -38,8 +38,8 @@ addpath neural_network/minFunc/
 %For debug
 Debug = true;
 if Debug
-    hiddenLayersSizes = {[20]}; % numel(hiddenLayersSize) = number of hidden layers
-    lambdas = [5e-5];         % weight decay parameter 
+    hiddenLayersSizes = {[5 5]}; % numel(hiddenLayersSize) = number of hidden layers
+    lambdas = [1e-6];         % weight decay parameter 
  
     % Create file to store result
     fileID = fopen('result/nn/debug_result_nn.txt','w');
@@ -79,7 +79,7 @@ for kk = 1:numel(lambdas)
         lambda = lambdas(kk);         % weight decay parameter             
 
         % Cross validation
-        n = 10;
+        n = 5;
         [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix,probs,true_label] = n_fold_cross_validation_nn(fv,label,n,...
             numClasses,hiddenLayersSize,sparsityParam,lambda,beta);
 

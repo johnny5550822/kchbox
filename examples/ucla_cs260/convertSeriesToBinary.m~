@@ -1,0 +1,20 @@
+% To convert a time-series data points into 0 or 1 depending on whether the
+% data points belong to decrease or increase
+
+% Input: 1xn, where n is the number of data points
+% output: 1x(n-1), because there will be one missing, number of peaks
+% (maximum or minimum)
+
+function [new_t,max_peaks,min_peaks] = convertSeriesToBinary(t_s)
+    states = [];    % to store binary 0(decreasing) or 1(increasing)
+    
+    %Define first state
+    if (t_s(2) < t_s(1))
+        states(1) = 0;
+    else
+        states(1) = 1;
+    end
+
+
+
+end

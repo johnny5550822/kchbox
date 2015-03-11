@@ -1,0 +1,15 @@
+nn_roc_layer_5_5_lambdas_1e-6
+
+confusion_matrix:
+    12     4
+     8    15
+
+Accuracy:0.692308
+Sentivity:0.600000
+Specificity:0.789474
+Precision:0.750000
+Recall:0.600000
+F-measure:0.666667
+MCC:0.395773
+
+##############################
