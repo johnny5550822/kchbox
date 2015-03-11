@@ -19,7 +19,7 @@ clc;
 % inputSize = 26 * 2; % time-series + two parameters <--define later,
 % depends on the feature set
 numClasses = 2;
-hiddenLayersSize = [30]; % numel(hiddenLayersSize) = number of hidden layers
+hiddenLayersSize = [20 5]; % numel(hiddenLayersSize) = number of hidden layers
 
 sparsityParam = 0.1;   % desired average activation of the hidden units.
                        % (This was denoted by the Greek alphabet rho, which looks like a lower-case "p",

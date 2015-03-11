@@ -13,7 +13,7 @@ function plotROC(probs,true_label)
     %Calculate ROC
     max_value = max(positive_probs);
     min_value = min(negative_probs);
-    T_roc = max_value:-1:min_value-1; %Threshold for ROC curve
+    T_roc = max_value + 1:-1:min_value-1; %Threshold for ROC curve
     pos_ROC=[];
     neg_ROC=[];
     for t=T_roc

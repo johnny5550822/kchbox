@@ -22,7 +22,7 @@ function [theta,netconfig] = initializeParameters(inputSize,hiddenLayersSize,num
         for i = 2:numel(hiddenLayersSize)
             r  = sqrt(6) / sqrt(hiddenLayersSize(i) + hiddenLayersSize(i-1) + 1); 
             
-            stack{i}.w = rand(hiddenLayersSize(i-1), hiddenLayersSize(i)) * 2 * r - r;
+            stack{i}.w = rand(hiddenLayersSize(i), hiddenLayersSize(i-1)) * 2 * r - r;
             stack{i}.b = zeros(hiddenLayersSize(i), 1);       
         end
         [stackparams,netconfig] = stack2params(stack);
