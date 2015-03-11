@@ -50,7 +50,7 @@ function [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix,probs,label] ..
         % prediction
         [num_validation] = size(validation_data,1);
         pred_validation = zeros(1,num_validation);
-        [pred_validation,prob] = kchbox_ae(validation_data,train_data,train_label, ...
+        [pred_validation,prob] = kchbox_ae(validation_data,train_data,train_label,...
             numClasses,hiddenLayersSize, sparsityParam,lambda,beta);
         
         % Generate evaluation matrice, such as accuracy. Also, for ROC

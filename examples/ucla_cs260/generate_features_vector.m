@@ -12,7 +12,7 @@ function fv = generate_features_vector(dia,systo)
     f4 = min(systo,[],2);
     f5 = f1-f2;
     f6 = f3-f4;
-    fv = [f1 f2 f3 f4 f5 f6];
+    %fv = [fv f1 f2 f3 f4 f5 f6];
 
     %###########MEthod 3
     diff = [systo - dia];
@@ -21,7 +21,7 @@ function fv = generate_features_vector(dia,systo)
     ff3 = mean(diff,2);
     ff4 = std(diff,[],2);
     
-    fv = [fv ff1 ff2 ff3 ff4];
+    %fv = [fv ff1 ff2 ff3 ff4];
 
     % normalize to range between 0 and 1
     fv = (fv - repmat(min(fv),[size(fv,1) 1]))./repmat((max(fv)-min(fv)),[size(fv,1) 1]);

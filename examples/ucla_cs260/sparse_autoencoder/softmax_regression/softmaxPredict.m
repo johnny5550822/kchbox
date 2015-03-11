@@ -1,6 +1,6 @@
 % Prediction using softmax
 
-function [pred] = softmaxPredict(softmaxModel, data)
+function [pred prob] = softmaxPredict(softmaxModel, data)
 
 % Unroll the parameters from theta
 theta = softmaxModel.optTheta;  % this provides a numClasses x inputSize matrix

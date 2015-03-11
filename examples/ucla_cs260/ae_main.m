@@ -51,15 +51,11 @@ label = label + 1;
 %% Step 2. Feature generation
 fv = generate_features_vector(dia,systo);   % fv = feature vectors
 
-%  Obtain random parameters theta
-inputSize = size(fv,2);
-theta = initializeParameters_ae(hiddenSize, inputSize);
-
 %% Step 3. n-fold cross-validation. If n = number of data, it will become leave-one-out
 clc;
 n = 10;
 [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix,probs,true_label] = n_fold_cross_validation_ae(fv,label,n,...
-    numClasses,hiddenLayersSize,sparsityParam,lambda,beta);
+    numClasses,hiddenSize,sparsityParam,lambda,beta);
 
 disp(sprintf('confusion_matrix:'));
 disp(confusion_matrix)

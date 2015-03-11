@@ -1,7 +1,7 @@
 %% Sparse Autoencoder which can be used as dimenion reduction in a non-linear fashion
 
-function [pred_validation,prob] = kchbox_ae(validation_data,train_data,train_label, ...
-            numClasses,hiddenLayersSize, sparsityParam,lambda,beta);
+function [pred,prob] = kchbox_ae(validation_data,train_data, label,...
+            numClasses,hiddenSize, sparsityParam,lambda,beta)
 
 %--------------  Obtain random parameters theta
 inputSize = size(train_data,2);
@@ -60,7 +60,7 @@ trainFeatures = feedForwardAutoencoder(opttheta, hiddenSize, inputSize, ...
 testFeatures = feedForwardAutoencoder(opttheta, hiddenSize, inputSize, ...
                                        validation_data');
 
-%% Step 6: Train a softmax classifier
+%------------------------------- Step 6: Train a softmax classifier
 clc;
 options.maxIter = 100;
 softmax_lambda = 1e-4;
@@ -70,11 +70,13 @@ trainFeatures = [ones(1,size(trainFeatures,2));trainFeatures];  %for base term
 hiddenSizeWithBase = hiddenSize+1;
 softmaxModel = softmaxTrain(hiddenSizeWithBase, numClasses, softmax_lambda, ...
                             trainFeatures, label, options);
-%% Step 7: Test
+%--------------------------------- Step 7: Test
 %Assign test features (activation) to inputData
 inputData = testFeatures;
 % inputData = testData;
 inputData = [ones(1,size(inputData,2));inputData]; %for base
 
 % You will have to implement softmaxPredict in softmaxPredict.m
-[pred] = softmaxPredict(softmaxModel, inputData);
+[pred, prob] = softmaxPredict(softmaxModel, inputData);
+
+end
