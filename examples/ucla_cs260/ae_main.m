@@ -18,9 +18,7 @@ clc;
 numClasses = 2;
 hiddenSize = [5]; % one have one layer since it is an autoencoder
 
-sparsityParam = 0.1;   % desired average activation of the hidden units.
-                       % (This was denoted by the Greek alphabet rho, which looks like a lower-case "p",
-		               %  in the lecture notes). 
+sparsityParam = 0.1;   % desired average activation of the hidden units.                        
 lambda = 3e-5;         % weight decay parameter       
 beta = 3;              % weight of sparsity penalty term       
 

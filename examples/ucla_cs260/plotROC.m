@@ -25,7 +25,7 @@ function hh = plotROC(probs,true_label)
     neg_ROC = neg_ROC/length(negative_probs);
 
     %Plot ROC
-    figure;
+    %figure;
     hh = plot(neg_ROC,pos_ROC,'x-');
     title(strcat('ROC curves for'));
     xlabel('False Alarm');
