@@ -19,12 +19,12 @@ clc;
 % inputSize = 26 * 2; % time-series + two parameters <--define later,
 % depends on the feature set
 numClasses = 2;
-hiddenLayersSize = [26 26]; % numel(hiddenLayersSize) = number of hidden layers
+hiddenLayersSize = [30]; % numel(hiddenLayersSize) = number of hidden layers
 
 sparsityParam = 0.1;   % desired average activation of the hidden units.
                        % (This was denoted by the Greek alphabet rho, which looks like a lower-case "p",
 		               %  in the lecture notes). 
-lambda = 3e-3;         % weight decay parameter       
+lambda = 3e-2;         % weight decay parameter       
 beta = 3;              % weight of sparsity penalty term       
 
 %add functions path
