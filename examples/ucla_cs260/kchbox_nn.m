@@ -4,7 +4,7 @@
 % Output: prediction of the test data.
 
 
-function pred = kchbox_nn(test_d,train_d,train_label,numClasses,hiddenLayersSize,...
+function [pred,prob] = kchbox_nn(test_d,train_d,train_label,numClasses,hiddenLayersSize,...
     sparsityParam,lambda,beta)
 
 %------------------------ Step 1. NN parameters initialization
@@ -30,11 +30,7 @@ end
 %gradient descent algorithm)
 
 %  Use minFunc to minimize the function
-options.HessUpate = 'lbfgs'; % Here, we use L-BFGS to optimize our cost
-                          % function. Generally, for minFunc to work, you
-                          % need a function pointer with two outputs: the
-                          % function value and the gradient. In our problem,
-                          % sparseAutoencoderCost.m satisfies this.
+options.HessUpate = 'lbfgs'; % use L-BFGS to optimize the cost function.
 options.MaxIter = 100;	  % Maximum number of iterations of L-BFGS to run 
 options.Display = 'iter';
 options.GradObj = 'on';
@@ -46,9 +42,8 @@ options.GradObj = 'on';
                               theta, options);
 
 %--------------- Step 3: Test
-[pred] = NNPredict(optTheta, inputSize, hiddenLayersSize, ...
+[pred,prob] = NNPredict(optTheta, inputSize, hiddenLayersSize, ...
                           numClasses, netconfig, test_d');                       
-
 % evaluation
 % acc = mean(train_label(:) == pred(:));
 % fprintf('Accuracy: %0.3f%%\n', acc * 100);

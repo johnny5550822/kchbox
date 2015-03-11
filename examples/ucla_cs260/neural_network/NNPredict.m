@@ -1,6 +1,9 @@
 % Prediction using NN
 
-function [pred] = NNPredict(theta, inputSize, hiddenLayersSize, numClasses, netconfig, data)
+%output: pred = prediction; prob = values in softmax, used to plot ROC
+%curve
+
+function [pred,prob] = NNPredict(theta, inputSize, hiddenLayersSize, numClasses, netconfig, data)
 
 % Unroll theta parameter
 hiddenSize = hiddenLayersSize(end);
@@ -22,7 +25,7 @@ for k = 1:n
    a{k+1} = sigmoid(z{k+1});
 end
 
-prob = softmaxTheta * a{n+1}; 
+prob = softmaxTheta * a{n+1};
 [values,pos] = max(prob,[],1);
 pred = pos;
 
