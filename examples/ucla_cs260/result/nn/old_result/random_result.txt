@@ -1,0 +1,90 @@
+nn_roc_layer_5_5_lambdas_1e-6
+
+confusion_matrix:
+    12     4
+     8    15
+
+Accuracy:0.692308
+Sentivity:0.600000
+Specificity:0.789474
+Precision:0.750000
+Recall:0.600000
+F-measure:0.666667
+MCC:0.395773
+
+##############################
+ae_knn_sparsitypara = 0.1, lambda = 3e-3, beta = 3
+hiddenSize = [5]; 
+- fv = [f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f15 f16 f17 f18];
+- no feature from subractiob of systolic and diastyolic
+- k=4
+
+confusion_matrix:
+    15     7
+     5    12
+
+Accuracy:0.692308
+Sentivity:0.750000
+Specificity:0.631579
+Precision:0.681818
+Recall:0.750000
+F-measure:0.714286
+MCC:0.384628
+
+################################
+ae_knn
+sparsityParam = 0.1;   % desired average activation of the hidden units.                        
+lambda = 3e-5;         % weight decay parameter,3e-3 is the best so far       
+beta = 3;              % weight of sparsity penalty term  
+k=3
+hiddenSize = [7]; 
+
+-400 iteration
+
+confusion_matrix:
+    13     6
+     7    13
+
+Accuracy:0.666667
+Sentivity:0.650000
+Specificity:0.684211
+Precision:0.684211
+Recall:0.650000
+F-measure:0.666667
+MCC:0.334211
+
+##################################
+numClasses = 2;
+hiddenSize = [10]; % one have one layer since it is an autoencoder, 5-5 is good with 14 features
+fv = [f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 f15 f16 f17 f18];
+sparsityParam = 0.01;   % desired average activation of the hidden units.                        
+lambda = 3e-5;         % weight decay parameter,3e-3 is the best so far       
+beta = 3;              % weight of sparsity penalty term  
+k=3
+
+confusion_matrix:
+    15     8
+     5    11
+
+Accuracy:0.666667
+Sentivity:0.750000
+Specificity:0.578947
+Precision:0.652174
+Recall:0.750000
+F-measure:0.697674
+MCC:0.334268
+
+######################################knn
+nn = 3
+distance matrix = hamming
+confusion_matrix:
+    14     2
+     6    17
+
+Accuracy:0.794872
+Sentivity:0.700000
+Specificity:0.894737
+Precision:0.875000
+Recall:0.700000
+F-measure:0.777778
+MCC:0.604356

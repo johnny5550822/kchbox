@@ -33,7 +33,7 @@ if Debug
     fileID = fopen('result/nn/debug_result_nn.txt','w');
 else    
     % Create file to store result
-    fileID = fopen('result/ae_knn/result_ae_knn.txt','w');
+    fileID = fopen('result/ae_knn/result_ae_knn_euclidean.txt','w');
 end
 
 %% Step 1 Load data
@@ -60,6 +60,8 @@ fv = generate_features_vector(dia,systo);   % fv = feature vectors
 
 %% Step 3. n-fold cross-validation. If n = number of data, it will become leave-one-out
 clc;
+n = 10;
+k=3;
 
 for qq = 1: numel(sparsityParams)
     for kk = 1:numel(lambdas)
@@ -70,10 +72,8 @@ for qq = 1: numel(sparsityParams)
             sparsityParam = sparsityParams(qq);
 
             %cross-validation
-            n = 10;
-            k=3;
             [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix,true_label] = n_fold_cross_validation_ae_knn(fv,label,n,...
-                numClasses,hiddenSize,sparsityParam,lambda,beta,'Chebychev',k); 
+                numClasses,hiddenSize,sparsityParam,lambda,beta,'euclidean',k); 
             % Euclidean, minkowski, Chebychev are preetty good
 
             disp(sprintf('confusion_matrix:'));

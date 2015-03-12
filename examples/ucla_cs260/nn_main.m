@@ -19,8 +19,10 @@ clc;
 % inputSize = 26 * 2; % time-series + two parameters <--define later,
 % depends on the feature set
 numClasses = 2;
-hiddenLayersSizes = {[5],[10],[20],[5 5],[10 5],[10 10],[20 5],...
-    [20 10], [20 20]}; % numel(hiddenLayersSize) = number of hidden layers
+hiddenLayersSizes = {[2],[4],[6],[8],[10],[12],[14],[16],[18],[20]...
+    [2 2],[4 4],[6 6],[8 8],[10 10],[12 12],[14 14],...
+    [4 2],[6 3],[8 4],[10 5],[12 6],[14 7],...
+    [8 4 2],[12 6 3],[2 2 2],[4 4 4]}; % numel(hiddenLayersSize) = number of hidden layers
 
 lambdas = [1e-2 1e-3 1e-4 1e-5];         % weight decay parameter 
 sparsityParam = 0.1;   % FOR AE, desired average activation of the hidden units.
@@ -36,7 +38,7 @@ addpath neural_network/minFunc/
 
 
 %For debug
-Debug = true;
+Debug = false;
 if Debug
     hiddenLayersSizes = {[5 5]}; % numel(hiddenLayersSize) = number of hidden layers
     lambdas = [1e-4];         % weight decay parameter 

@@ -12,7 +12,7 @@
 % combined confusion matric
 
 function [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix] ...
-    = n_fold_cross_validation_knn(fv, label, k , n)
+    = n_fold_cross_validation_knn(fv, label, k , n, dist_measure)
     % parameters
     num_patients = numel(label);
     factor = round(num_patients/n);
@@ -48,7 +48,7 @@ function [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix] ...
         [num_validation] = size(validation_data,1);
         pred_validation = zeros(1,num_validation);
         for i = 1:num_validation
-            pred_validation(i) = kchbox_knn(k,validation_data(i,:),train_data,train_label,'jaccard');        
+            pred_validation(i) = kchbox_knn(k,validation_data(i,:),train_data,train_label,dist_measure);        
         end
     
         % Generate evaluation matrice, such as accuracy
