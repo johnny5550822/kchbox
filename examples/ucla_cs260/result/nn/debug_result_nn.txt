@@ -1,11 +1,11 @@
 ############Experiment:1################
-HiddenLayer:[5 5]	 sparsityParam:0.100000	 lambda:0.000001	 beta:3.000000
-confusion_matrix:[11 10;9 9]
-Accuracy:0.512821
-Sentivity:0.550000
-Specificity:0.473684
-Precision:0.523810
-Recall:0.550000
-F-measure:0.536585
-MCC:0.023747
+HiddenLayer:5	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[7 11;13 8]
+Accuracy:0.384615
+Sentivity:0.350000
+Specificity:0.421053
+Precision:0.388889
+Recall:0.350000
+F-measure:0.368421
+MCC:-0.229552
 

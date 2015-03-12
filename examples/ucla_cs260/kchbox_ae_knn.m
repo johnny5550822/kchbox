@@ -3,7 +3,7 @@
 % classifier instead of softmax
 
 function [pred] = kchbox_ae_knn(validation_data,train_data, label,...
-            numClasses,hiddenSize, sparsityParam,lambda,beta)
+            numClasses,hiddenSize, sparsityParam,lambda,beta,distance_measure)
 
 %--------------  Obtain random parameters theta
 inputSize = size(train_data,2);
@@ -64,20 +64,18 @@ testFeatures = feedForwardAutoencoder(opttheta, hiddenSize, inputSize, ...
 
 %------------------------------- Step 6: Train a Knn classifier
 clc;
-options.maxIter = 100;
-softmax_lambda = 1e-4;
 
 % With obtained features
 trainFeatures = [ones(1,size(trainFeatures,2));trainFeatures];  %21x35
 testFeatures = [ones(1,size(testFeatures,2));testFeatures]; %21x4
 
 %------------------------------- Prediction using Knn and the new features
-k=4;
+k=3;
 testFeatures = testFeatures';
 trainFeatures = trainFeatures';
 pred = zeros(1,size(testFeatures,1));
 for i = 1:size(testFeatures,1)
-    pred(i) = kchbox_knn(k,testFeatures(i,:),trainFeatures,label);      
+    pred(i) = kchbox_knn(k,testFeatures(i,:),trainFeatures,label,distance_measure);      
 end
     
     

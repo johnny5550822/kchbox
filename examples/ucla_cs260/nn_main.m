@@ -38,8 +38,8 @@ addpath neural_network/minFunc/
 %For debug
 Debug = true;
 if Debug
-    hiddenLayersSizes = {[5 5]}; % numel(hiddenLayersSize) = number of hidden layers
-    lambdas = [1e-6];         % weight decay parameter 
+    hiddenLayersSizes = {[5]}; % numel(hiddenLayersSize) = number of hidden layers
+    lambdas = [1e-4];         % weight decay parameter 
  
     % Create file to store result
     fileID = fopen('result/nn/debug_result_nn.txt','w');

@@ -13,7 +13,7 @@
 
 function [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix,label] ...
     = n_fold_cross_validation_ae_knn(fv, label, n, numClasses,hiddenLayersSize,...
-    sparsityParam,lambda,beta,dist_measure)
+    sparsityParam,lambda,beta)
 
     % parameters
     num_patients = numel(label);
@@ -50,7 +50,7 @@ function [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix,label] ...
         [num_validation] = size(validation_data,1);
         pred_validation = zeros(1,num_validation);
         [pred_validation] = kchbox_ae_knn(validation_data,train_data,train_label,...
-            numClasses,hiddenLayersSize, sparsityParam,lambda,beta,dist_measure);
+            numClasses,hiddenLayersSize, sparsityParam,lambda,beta,');
         
         % Generate evaluation matrice, such as accuracy. Also, for ROC
         %validation_label

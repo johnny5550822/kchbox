@@ -36,14 +36,14 @@ label = label+1;
 fv = generate_features_vector(dia,systo);   % fv = feature vectors
 
 %% Step 2 Define k + parameter setting
-k = 4;
+k = 3;
 
 %% Step 3 & Step 4
 split_ratio = 0.7;
 [accuracy] = simple_validation(fv,label,split_ratio,k);
 %% n-fold cross-validation. If n = number of data, it will become leave-one-out
 
-n = 10;
+n = 39;
 [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix] = n_fold_cross_validation_knn(fv,label,k,n);
 
 disp(sprintf('confusion_matrix:'));

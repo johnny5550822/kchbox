@@ -48,7 +48,7 @@ function [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix] ...
         [num_validation] = size(validation_data,1);
         pred_validation = zeros(1,num_validation);
         for i = 1:num_validation
-            pred_validation(i) = kchbox_knn(k,validation_data(i,:),train_data,train_label);        
+            pred_validation(i) = kchbox_knn(k,validation_data(i,:),train_data,train_label,'jaccard');        
         end
     
         % Generate evaluation matrice, such as accuracy

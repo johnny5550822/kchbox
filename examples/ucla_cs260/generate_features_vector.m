@@ -28,12 +28,11 @@ function fv = generate_features_vector(dia,systo)
     
     % number of peaks
     [a,f15,f16] = convertSeriesToBinary(dia);
-    [a,f17,f18] = convertSeriesToBinary(systo);
+    [b,f17,f18] = convertSeriesToBinary(systo);
     
     %combine all feature
     fv = [f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f15 f16 f17 f18];
-    % fv = [f15 f16 f17 f18];
-    
+    fv = [f15 f16 f17 f18];
     %###########MEthod 3: Basic features from the difference of systolic
     %and diastolic pressure
     diff = [systo - dia];
@@ -43,15 +42,12 @@ function fv = generate_features_vector(dia,systo)
     ff4 = std(diff,[],2);
     [a,ff5,ff6] = convertSeriesToBinary(diff);
     
-    %fv = [fv ff1 ff2 ff3 ff4 ff5 ff6];
 
     % normalize to range between 0 and 1
     fv = (fv - repmat(min(fv),[size(fv,1) 1]))./repmat((max(fv)-min(fv)),[size(fv,1) 1]);
 
     
-    %##########method4: Convert the time series into up and downs
-    %(simply;ignore the values)
-    fff1 = convertSeriesToBinary(dia);
-    
-    
+    %##########method4: Fourier transform: transfer the time-series into
+    %frequency
+    % fv = convertToFreqFeatures(systo);
 end

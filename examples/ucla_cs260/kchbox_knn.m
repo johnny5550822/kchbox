@@ -3,18 +3,19 @@
 % of features, m is the number of training data.
 % Output: prediction of the test data.
 
-function prediction = kchbox_knn(k,test_d,train_d,train_label)
+function prediction = kchbox_knn(k,test_d,train_d,train_label,distance_measure)
     % ########## Step 3 Given a test data, find k closest neighbor.
     % This part can be improved by using kd-tree. If your training dataset is
     % small, the basic implement is alright. If it is big, it will be much
     % better to use kd-tree.
     % ###########
     % Calculate pair-wise distance between each point with the test data
-    D = pdist2(test_d,train_d,'euclidean');
+    D = pdist2(test_d,train_d,distance_measure);   %jaccard(1st), hamming(2nd) give the best result for knn
 
     % find k nearest neighbors (To be specific, position in the array)
     % Sort the distance from small to large. The first k elements in pos is the
     % cloest neighbors
+    
     [sorted_D,pos] = sort(D);
     neighbors_pos = pos(1:k);
 

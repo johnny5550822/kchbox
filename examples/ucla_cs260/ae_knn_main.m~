@@ -11,18 +11,24 @@ clc;
 % inputSize = 26 * 2; % time-series + two parameters <--define later,
 % depends on the feature set
 numClasses = 2;
-hiddenSize = [5]; % one have one layer since it is an autoencoder
+hiddenSize = [7]; % one have one layer since it is an autoencoder, 5-5 is good with 14 features
 
-sparsityParam = 0.05;   % desired average activation of the hidden units.                        
-lambda = 3e-5;         % weight decay parameter       
+sparsityParam = 0.1;   % desired average activation of the hidden units.                        
+lambda = 3e-5;         % weight decay parameter,3e-3 is the best so far       
 beta = 3;              % weight of sparsity penalty term     
-
-if 
 
 %add functions path
 addpath sparse_autoencoder
 addpath sparse_autoencoder/minFunc/
 addpath sparse_autoencoder/softmax_regression
+
+Debug = false;
+if Debug
+    sparsityParam = 0;   % desired average activation of the hidden units.                        
+    lambda = 0;         % weight decay parameter       
+    beta = 0;              % weight of sparsity penalty term  
+    
+end
 
 %% Step 1 Load data
 
@@ -50,7 +56,8 @@ fv = generate_features_vector(dia,systo);   % fv = feature vectors
 clc;
 n = 10;
 [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix,true_label] = n_fold_cross_validation_ae_knn(fv,label,n,...
-    numClasses,hiddenSize,sparsityParam,lambda,beta);
+    numClasses,hiddenSize,sparsityParam,lambda,beta,'Chebychev'); 
+% Euclideanminkowski is preetty good
 
 disp(sprintf('confusion_matrix:'));
 disp(confusion_matrix)
