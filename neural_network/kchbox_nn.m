@@ -31,7 +31,7 @@ end
 
 %  Use minFunc to minimize the function
 options.HessUpate = 'lbfgs'; % use L-BFGS to optimize the cost function.
-options.MaxIter = 100;	  % Maximum number of iterations of L-BFGS to run 
+options.MaxIter = 400;	  % Maximum number of iterations of L-BFGS to run 
 options.Display = 'iter';
 options.GradObj = 'on';
 

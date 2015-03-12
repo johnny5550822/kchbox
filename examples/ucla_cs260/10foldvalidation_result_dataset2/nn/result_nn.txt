@@ -1,0 +1,1188 @@
+############Experiment:1################
+HiddenLayer:2	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[7 7;12 13]
+Accuracy:0.512821
+Sentivity:0.368421
+Specificity:0.650000
+Precision:0.500000
+Recall:0.368421
+F-measure:0.424242
+MCC:0.019194
+
+############Experiment:2################
+HiddenLayer:4	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[11 7;8 13]
+Accuracy:0.615385
+Sentivity:0.578947
+Specificity:0.650000
+Precision:0.611111
+Recall:0.578947
+F-measure:0.594595
+MCC:0.229552
+
+############Experiment:3################
+HiddenLayer:6	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[8 13;11 7]
+Accuracy:0.384615
+Sentivity:0.421053
+Specificity:0.350000
+Precision:0.380952
+Recall:0.421053
+F-measure:0.400000
+MCC:-0.229552
+
+############Experiment:4################
+HiddenLayer:8	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[10 9;9 11]
+Accuracy:0.538462
+Sentivity:0.526316
+Specificity:0.550000
+Precision:0.526316
+Recall:0.526316
+F-measure:0.526316
+MCC:0.076316
+
+############Experiment:5################
+HiddenLayer:10	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[9 9;10 11]
+Accuracy:0.512821
+Sentivity:0.473684
+Specificity:0.550000
+Precision:0.500000
+Recall:0.473684
+F-measure:0.486486
+MCC:0.023747
+
+############Experiment:6################
+HiddenLayer:12	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[11 9;8 11]
+Accuracy:0.564103
+Sentivity:0.578947
+Specificity:0.550000
+Precision:0.550000
+Recall:0.578947
+F-measure:0.564103
+MCC:0.128947
+
+############Experiment:7################
+HiddenLayer:14	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[10 12;9 8]
+Accuracy:0.461538
+Sentivity:0.526316
+Specificity:0.400000
+Precision:0.454545
+Recall:0.526316
+F-measure:0.487805
+MCC:-0.074273
+
+############Experiment:8################
+HiddenLayer:16	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[13 9;6 11]
+Accuracy:0.615385
+Sentivity:0.684211
+Specificity:0.550000
+Precision:0.590909
+Recall:0.684211
+F-measure:0.634146
+MCC:0.236082
+
+############Experiment:9################
+HiddenLayer:18	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[10 9;9 11]
+Accuracy:0.538462
+Sentivity:0.526316
+Specificity:0.550000
+Precision:0.526316
+Recall:0.526316
+F-measure:0.526316
+MCC:0.076316
+
+############Experiment:10################
+HiddenLayer:20	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[11 7;8 13]
+Accuracy:0.615385
+Sentivity:0.578947
+Specificity:0.650000
+Precision:0.611111
+Recall:0.578947
+F-measure:0.594595
+MCC:0.229552
+
+############Experiment:11################
+HiddenLayer:[2 2]	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[3 10;16 10]
+Accuracy:0.333333
+Sentivity:0.157895
+Specificity:0.500000
+Precision:0.230769
+Recall:0.157895
+F-measure:0.187500
+MCC:-0.362738
+
+############Experiment:12################
+HiddenLayer:[4 4]	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[5 5;14 15]
+Accuracy:0.512821
+Sentivity:0.263158
+Specificity:0.750000
+Precision:0.500000
+Recall:0.263158
+F-measure:0.344828
+MCC:0.015062
+
+############Experiment:13################
+HiddenLayer:[6 6]	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[9 9;10 11]
+Accuracy:0.512821
+Sentivity:0.473684
+Specificity:0.550000
+Precision:0.500000
+Recall:0.473684
+F-measure:0.486486
+MCC:0.023747
+
+############Experiment:14################
+HiddenLayer:[8 8]	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[6 10;13 10]
+Accuracy:0.410256
+Sentivity:0.315789
+Specificity:0.500000
+Precision:0.375000
+Recall:0.315789
+F-measure:0.342857
+MCC:-0.187190
+
+############Experiment:15################
+HiddenLayer:[10 10]	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[11 8;8 12]
+Accuracy:0.589744
+Sentivity:0.578947
+Specificity:0.600000
+Precision:0.578947
+Recall:0.578947
+F-measure:0.578947
+MCC:0.178947
+
+############Experiment:16################
+HiddenLayer:[12 12]	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[8 7;11 13]
+Accuracy:0.538462
+Sentivity:0.421053
+Specificity:0.650000
+Precision:0.533333
+Recall:0.421053
+F-measure:0.470588
+MCC:0.073000
+
+############Experiment:17################
+HiddenLayer:[14 14]	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[11 7;8 13]
+Accuracy:0.615385
+Sentivity:0.578947
+Specificity:0.650000
+Precision:0.611111
+Recall:0.578947
+F-measure:0.594595
+MCC:0.229552
+
+############Experiment:18################
+HiddenLayer:[4 2]	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[9 14;10 6]
+Accuracy:0.384615
+Sentivity:0.473684
+Specificity:0.300000
+Precision:0.391304
+Recall:0.473684
+F-measure:0.428571
+MCC:-0.229976
+
+############Experiment:19################
+HiddenLayer:[6 3]	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[8 4;11 16]
+Accuracy:0.615385
+Sentivity:0.421053
+Specificity:0.800000
+Precision:0.666667
+Recall:0.421053
+F-measure:0.516129
+MCC:0.239395
+
+############Experiment:20################
+HiddenLayer:[8 4]	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[8 9;11 11]
+Accuracy:0.487179
+Sentivity:0.421053
+Specificity:0.550000
+Precision:0.470588
+Recall:0.421053
+F-measure:0.444444
+MCC:-0.029179
+
+############Experiment:21################
+HiddenLayer:[10 5]	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[10 8;9 12]
+Accuracy:0.564103
+Sentivity:0.526316
+Specificity:0.600000
+Precision:0.555556
+Recall:0.526316
+F-measure:0.540541
+MCC:0.126650
+
+############Experiment:22################
+HiddenLayer:[12 6]	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[7 13;12 7]
+Accuracy:0.358974
+Sentivity:0.368421
+Specificity:0.350000
+Precision:0.350000
+Recall:0.368421
+F-measure:0.358974
+MCC:-0.281579
+
+############Experiment:23################
+HiddenLayer:[14 7]	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[9 9;10 11]
+Accuracy:0.512821
+Sentivity:0.473684
+Specificity:0.550000
+Precision:0.500000
+Recall:0.473684
+F-measure:0.486486
+MCC:0.023747
+
+############Experiment:24################
+HiddenLayer:[8 4 2]	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[1 5;18 15]
+Accuracy:0.410256
+Sentivity:0.052632
+Specificity:0.750000
+Precision:0.166667
+Recall:0.052632
+F-measure:0.080000
+MCC:-0.273424
+
+############Experiment:25################
+HiddenLayer:[12 6 3]	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[6 8;13 12]
+Accuracy:0.461538
+Sentivity:0.315789
+Specificity:0.600000
+Precision:0.428571
+Recall:0.315789
+F-measure:0.363636
+MCC:-0.087745
+
+############Experiment:26################
+HiddenLayer:[2 2 2]	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[8 12;11 8]
+Accuracy:0.410256
+Sentivity:0.421053
+Specificity:0.400000
+Precision:0.400000
+Recall:0.421053
+F-measure:0.410256
+MCC:-0.178947
+
+############Experiment:27################
+HiddenLayer:[4 4 4]	 sparsityParam:0.100000	 lambda:0.010000	 beta:3.000000
+confusion_matrix:[5 8;14 12]
+Accuracy:0.435897
+Sentivity:0.263158
+Specificity:0.600000
+Precision:0.384615
+Recall:0.263158
+F-measure:0.312500
+MCC:-0.145095
+
+############Experiment:28################
+HiddenLayer:2	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[10 10;9 10]
+Accuracy:0.512821
+Sentivity:0.526316
+Specificity:0.500000
+Precision:0.500000
+Recall:0.526316
+F-measure:0.512821
+MCC:0.026316
+
+############Experiment:29################
+HiddenLayer:4	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[14 8;5 12]
+Accuracy:0.666667
+Sentivity:0.736842
+Specificity:0.600000
+Precision:0.636364
+Recall:0.736842
+F-measure:0.682927
+MCC:0.339533
+
+############Experiment:30################
+HiddenLayer:6	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[10 8;9 12]
+Accuracy:0.564103
+Sentivity:0.526316
+Specificity:0.600000
+Precision:0.555556
+Recall:0.526316
+F-measure:0.540541
+MCC:0.126650
+
+############Experiment:31################
+HiddenLayer:8	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[11 8;8 12]
+Accuracy:0.589744
+Sentivity:0.578947
+Specificity:0.600000
+Precision:0.578947
+Recall:0.578947
+F-measure:0.578947
+MCC:0.178947
+
+############Experiment:32################
+HiddenLayer:10	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[10 7;9 13]
+Accuracy:0.589744
+Sentivity:0.526316
+Specificity:0.650000
+Precision:0.588235
+Recall:0.526316
+F-measure:0.555556
+MCC:0.177724
+
+############Experiment:33################
+HiddenLayer:12	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[15 8;4 12]
+Accuracy:0.692308
+Sentivity:0.789474
+Specificity:0.600000
+Precision:0.652174
+Recall:0.789474
+F-measure:0.714286
+MCC:0.395773
+
+############Experiment:34################
+HiddenLayer:14	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[13 7;6 13]
+Accuracy:0.666667
+Sentivity:0.684211
+Specificity:0.650000
+Precision:0.650000
+Recall:0.684211
+F-measure:0.666667
+MCC:0.334211
+
+############Experiment:35################
+HiddenLayer:16	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[11 7;8 13]
+Accuracy:0.615385
+Sentivity:0.578947
+Specificity:0.650000
+Precision:0.611111
+Recall:0.578947
+F-measure:0.594595
+MCC:0.229552
+
+############Experiment:36################
+HiddenLayer:18	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[13 6;6 14]
+Accuracy:0.692308
+Sentivity:0.684211
+Specificity:0.700000
+Precision:0.684211
+Recall:0.684211
+F-measure:0.684211
+MCC:0.384211
+
+############Experiment:37################
+HiddenLayer:20	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[13 7;6 13]
+Accuracy:0.666667
+Sentivity:0.684211
+Specificity:0.650000
+Precision:0.650000
+Recall:0.684211
+F-measure:0.666667
+MCC:0.334211
+
+############Experiment:38################
+HiddenLayer:[2 2]	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[7 10;12 10]
+Accuracy:0.435897
+Sentivity:0.368421
+Specificity:0.500000
+Precision:0.411765
+Recall:0.368421
+F-measure:0.388889
+MCC:-0.132630
+
+############Experiment:39################
+HiddenLayer:[4 4]	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[11 9;8 11]
+Accuracy:0.564103
+Sentivity:0.578947
+Specificity:0.550000
+Precision:0.550000
+Recall:0.578947
+F-measure:0.564103
+MCC:0.128947
+
+############Experiment:40################
+HiddenLayer:[6 6]	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[11 10;8 10]
+Accuracy:0.538462
+Sentivity:0.578947
+Specificity:0.500000
+Precision:0.523810
+Recall:0.578947
+F-measure:0.550000
+MCC:0.079156
+
+############Experiment:41################
+HiddenLayer:[8 8]	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[11 8;8 12]
+Accuracy:0.589744
+Sentivity:0.578947
+Specificity:0.600000
+Precision:0.578947
+Recall:0.578947
+F-measure:0.578947
+MCC:0.178947
+
+############Experiment:42################
+HiddenLayer:[10 10]	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[8 10;11 10]
+Accuracy:0.461538
+Sentivity:0.421053
+Specificity:0.500000
+Precision:0.444444
+Recall:0.421053
+F-measure:0.432432
+MCC:-0.079156
+
+############Experiment:43################
+HiddenLayer:[12 12]	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[14 10;5 10]
+Accuracy:0.615385
+Sentivity:0.736842
+Specificity:0.500000
+Precision:0.583333
+Recall:0.736842
+F-measure:0.651163
+MCC:0.243332
+
+############Experiment:44################
+HiddenLayer:[14 14]	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[12 9;7 11]
+Accuracy:0.589744
+Sentivity:0.631579
+Specificity:0.550000
+Precision:0.571429
+Recall:0.631579
+F-measure:0.600000
+MCC:0.182059
+
+############Experiment:45################
+HiddenLayer:[4 2]	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[11 13;8 7]
+Accuracy:0.461538
+Sentivity:0.578947
+Specificity:0.350000
+Precision:0.458333
+Recall:0.578947
+F-measure:0.511628
+MCC:-0.073000
+
+############Experiment:46################
+HiddenLayer:[6 3]	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[13 9;6 11]
+Accuracy:0.615385
+Sentivity:0.684211
+Specificity:0.550000
+Precision:0.590909
+Recall:0.684211
+F-measure:0.634146
+MCC:0.236082
+
+############Experiment:47################
+HiddenLayer:[8 4]	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[11 8;8 12]
+Accuracy:0.589744
+Sentivity:0.578947
+Specificity:0.600000
+Precision:0.578947
+Recall:0.578947
+F-measure:0.578947
+MCC:0.178947
+
+############Experiment:48################
+HiddenLayer:[10 5]	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[12 5;7 15]
+Accuracy:0.692308
+Sentivity:0.631579
+Specificity:0.750000
+Precision:0.705882
+Recall:0.631579
+F-measure:0.666667
+MCC:0.384628
+
+############Experiment:49################
+HiddenLayer:[12 6]	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[11 8;8 12]
+Accuracy:0.589744
+Sentivity:0.578947
+Specificity:0.600000
+Precision:0.578947
+Recall:0.578947
+F-measure:0.578947
+MCC:0.178947
+
+############Experiment:50################
+HiddenLayer:[14 7]	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[6 9;13 11]
+Accuracy:0.435897
+Sentivity:0.315789
+Specificity:0.550000
+Precision:0.400000
+Recall:0.315789
+F-measure:0.352941
+MCC:-0.137888
+
+############Experiment:51################
+HiddenLayer:[8 4 2]	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[9 10;10 10]
+Accuracy:0.487179
+Sentivity:0.473684
+Specificity:0.500000
+Precision:0.473684
+Recall:0.473684
+F-measure:0.473684
+MCC:-0.026316
+
+############Experiment:52################
+HiddenLayer:[12 6 3]	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[12 8;7 12]
+Accuracy:0.615385
+Sentivity:0.631579
+Specificity:0.600000
+Precision:0.600000
+Recall:0.631579
+F-measure:0.615385
+MCC:0.231579
+
+############Experiment:53################
+HiddenLayer:[2 2 2]	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[7 6;12 14]
+Accuracy:0.538462
+Sentivity:0.368421
+Specificity:0.700000
+Precision:0.538462
+Recall:0.368421
+F-measure:0.437500
+MCC:0.072548
+
+############Experiment:54################
+HiddenLayer:[4 4 4]	 sparsityParam:0.100000	 lambda:0.001000	 beta:3.000000
+confusion_matrix:[11 11;8 9]
+Accuracy:0.512821
+Sentivity:0.578947
+Specificity:0.450000
+Precision:0.500000
+Recall:0.578947
+F-measure:0.536585
+MCC:0.029179
+
+############Experiment:55################
+HiddenLayer:2	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[11 10;8 10]
+Accuracy:0.538462
+Sentivity:0.578947
+Specificity:0.500000
+Precision:0.523810
+Recall:0.578947
+F-measure:0.550000
+MCC:0.079156
+
+############Experiment:56################
+HiddenLayer:4	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[13 7;6 13]
+Accuracy:0.666667
+Sentivity:0.684211
+Specificity:0.650000
+Precision:0.650000
+Recall:0.684211
+F-measure:0.666667
+MCC:0.334211
+
+############Experiment:57################
+HiddenLayer:6	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[8 11;11 9]
+Accuracy:0.435897
+Sentivity:0.421053
+Specificity:0.450000
+Precision:0.421053
+Recall:0.421053
+F-measure:0.421053
+MCC:-0.128947
+
+############Experiment:58################
+HiddenLayer:8	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[12 8;7 12]
+Accuracy:0.615385
+Sentivity:0.631579
+Specificity:0.600000
+Precision:0.600000
+Recall:0.631579
+F-measure:0.615385
+MCC:0.231579
+
+############Experiment:59################
+HiddenLayer:10	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[12 7;7 13]
+Accuracy:0.641026
+Sentivity:0.631579
+Specificity:0.650000
+Precision:0.631579
+Recall:0.631579
+F-measure:0.631579
+MCC:0.281579
+
+############Experiment:60################
+HiddenLayer:12	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[11 10;8 10]
+Accuracy:0.538462
+Sentivity:0.578947
+Specificity:0.500000
+Precision:0.523810
+Recall:0.578947
+F-measure:0.550000
+MCC:0.079156
+
+############Experiment:61################
+HiddenLayer:14	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[9 9;10 11]
+Accuracy:0.512821
+Sentivity:0.473684
+Specificity:0.550000
+Precision:0.500000
+Recall:0.473684
+F-measure:0.486486
+MCC:0.023747
+
+############Experiment:62################
+HiddenLayer:16	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[12 6;7 14]
+Accuracy:0.666667
+Sentivity:0.631579
+Specificity:0.700000
+Precision:0.666667
+Recall:0.631579
+F-measure:0.648649
+MCC:0.332455
+
+############Experiment:63################
+HiddenLayer:18	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[14 6;5 14]
+Accuracy:0.717949
+Sentivity:0.736842
+Specificity:0.700000
+Precision:0.700000
+Recall:0.736842
+F-measure:0.717949
+MCC:0.436842
+
+############Experiment:64################
+HiddenLayer:20	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[10 5;9 15]
+Accuracy:0.641026
+Sentivity:0.526316
+Specificity:0.750000
+Precision:0.666667
+Recall:0.526316
+F-measure:0.588235
+MCC:0.283887
+
+############Experiment:65################
+HiddenLayer:[2 2]	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[11 8;8 12]
+Accuracy:0.589744
+Sentivity:0.578947
+Specificity:0.600000
+Precision:0.578947
+Recall:0.578947
+F-measure:0.578947
+MCC:0.178947
+
+############Experiment:66################
+HiddenLayer:[4 4]	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[10 7;9 13]
+Accuracy:0.589744
+Sentivity:0.526316
+Specificity:0.650000
+Precision:0.588235
+Recall:0.526316
+F-measure:0.555556
+MCC:0.177724
+
+############Experiment:67################
+HiddenLayer:[6 6]	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[16 8;3 12]
+Accuracy:0.717949
+Sentivity:0.842105
+Specificity:0.600000
+Precision:0.666667
+Recall:0.842105
+F-measure:0.744186
+MCC:0.454220
+
+############Experiment:68################
+HiddenLayer:[8 8]	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[12 8;7 12]
+Accuracy:0.615385
+Sentivity:0.631579
+Specificity:0.600000
+Precision:0.600000
+Recall:0.631579
+F-measure:0.615385
+MCC:0.231579
+
+############Experiment:69################
+HiddenLayer:[10 10]	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[15 7;4 13]
+Accuracy:0.717949
+Sentivity:0.789474
+Specificity:0.650000
+Precision:0.681818
+Recall:0.789474
+F-measure:0.731707
+MCC:0.442985
+
+############Experiment:70################
+HiddenLayer:[12 12]	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[13 11;6 9]
+Accuracy:0.564103
+Sentivity:0.684211
+Specificity:0.450000
+Precision:0.541667
+Recall:0.684211
+F-measure:0.604651
+MCC:0.137888
+
+############Experiment:71################
+HiddenLayer:[14 14]	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[8 8;11 12]
+Accuracy:0.512821
+Sentivity:0.421053
+Specificity:0.600000
+Precision:0.500000
+Recall:0.421053
+F-measure:0.457143
+MCC:0.021393
+
+############Experiment:72################
+HiddenLayer:[4 2]	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[12 11;7 9]
+Accuracy:0.538462
+Sentivity:0.631579
+Specificity:0.450000
+Precision:0.521739
+Recall:0.631579
+F-measure:0.571429
+MCC:0.082898
+
+############Experiment:73################
+HiddenLayer:[6 3]	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[10 8;9 12]
+Accuracy:0.564103
+Sentivity:0.526316
+Specificity:0.600000
+Precision:0.555556
+Recall:0.526316
+F-measure:0.540541
+MCC:0.126650
+
+############Experiment:74################
+HiddenLayer:[8 4]	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[9 11;10 9]
+Accuracy:0.461538
+Sentivity:0.473684
+Specificity:0.450000
+Precision:0.450000
+Recall:0.473684
+F-measure:0.461538
+MCC:-0.076316
+
+############Experiment:75################
+HiddenLayer:[10 5]	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[12 9;7 11]
+Accuracy:0.589744
+Sentivity:0.631579
+Specificity:0.550000
+Precision:0.571429
+Recall:0.631579
+F-measure:0.600000
+MCC:0.182059
+
+############Experiment:76################
+HiddenLayer:[12 6]	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[13 6;6 14]
+Accuracy:0.692308
+Sentivity:0.684211
+Specificity:0.700000
+Precision:0.684211
+Recall:0.684211
+F-measure:0.684211
+MCC:0.384211
+
+############Experiment:77################
+HiddenLayer:[14 7]	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[10 6;9 14]
+Accuracy:0.615385
+Sentivity:0.526316
+Specificity:0.700000
+Precision:0.625000
+Recall:0.526316
+F-measure:0.571429
+MCC:0.229976
+
+############Experiment:78################
+HiddenLayer:[8 4 2]	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[5 9;14 11]
+Accuracy:0.410256
+Sentivity:0.263158
+Specificity:0.550000
+Precision:0.357143
+Recall:0.263158
+F-measure:0.303030
+MCC:-0.194685
+
+############Experiment:79################
+HiddenLayer:[12 6 3]	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[13 11;6 9]
+Accuracy:0.564103
+Sentivity:0.684211
+Specificity:0.450000
+Precision:0.541667
+Recall:0.684211
+F-measure:0.604651
+MCC:0.137888
+
+############Experiment:80################
+HiddenLayer:[2 2 2]	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[7 9;12 11]
+Accuracy:0.461538
+Sentivity:0.368421
+Specificity:0.550000
+Precision:0.437500
+Recall:0.368421
+F-measure:0.400000
+MCC:-0.082898
+
+############Experiment:81################
+HiddenLayer:[4 4 4]	 sparsityParam:0.100000	 lambda:0.000100	 beta:3.000000
+confusion_matrix:[11 11;8 9]
+Accuracy:0.512821
+Sentivity:0.578947
+Specificity:0.450000
+Precision:0.500000
+Recall:0.578947
+F-measure:0.536585
+MCC:0.029179
+
+############Experiment:82################
+HiddenLayer:2	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[11 9;8 11]
+Accuracy:0.564103
+Sentivity:0.578947
+Specificity:0.550000
+Precision:0.550000
+Recall:0.578947
+F-measure:0.564103
+MCC:0.128947
+
+############Experiment:83################
+HiddenLayer:4	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[12 7;7 13]
+Accuracy:0.641026
+Sentivity:0.631579
+Specificity:0.650000
+Precision:0.631579
+Recall:0.631579
+F-measure:0.631579
+MCC:0.281579
+
+############Experiment:84################
+HiddenLayer:6	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[13 5;6 15]
+Accuracy:0.717949
+Sentivity:0.684211
+Specificity:0.750000
+Precision:0.722222
+Recall:0.684211
+F-measure:0.702703
+MCC:0.435358
+
+############Experiment:85################
+HiddenLayer:8	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[13 8;6 12]
+Accuracy:0.641026
+Sentivity:0.684211
+Specificity:0.600000
+Precision:0.619048
+Recall:0.684211
+F-measure:0.650000
+MCC:0.284961
+
+############Experiment:86################
+HiddenLayer:10	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[11 9;8 11]
+Accuracy:0.564103
+Sentivity:0.578947
+Specificity:0.550000
+Precision:0.550000
+Recall:0.578947
+F-measure:0.564103
+MCC:0.128947
+
+############Experiment:87################
+HiddenLayer:12	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[14 8;5 12]
+Accuracy:0.666667
+Sentivity:0.736842
+Specificity:0.600000
+Precision:0.636364
+Recall:0.736842
+F-measure:0.682927
+MCC:0.339533
+
+############Experiment:88################
+HiddenLayer:14	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[12 10;7 10]
+Accuracy:0.564103
+Sentivity:0.631579
+Specificity:0.500000
+Precision:0.545455
+Recall:0.631579
+F-measure:0.585366
+MCC:0.132630
+
+############Experiment:89################
+HiddenLayer:16	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[13 7;6 13]
+Accuracy:0.666667
+Sentivity:0.684211
+Specificity:0.650000
+Precision:0.650000
+Recall:0.684211
+F-measure:0.666667
+MCC:0.334211
+
+############Experiment:90################
+HiddenLayer:18	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[10 7;9 13]
+Accuracy:0.589744
+Sentivity:0.526316
+Specificity:0.650000
+Precision:0.588235
+Recall:0.526316
+F-measure:0.555556
+MCC:0.177724
+
+############Experiment:91################
+HiddenLayer:20	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[11 9;8 11]
+Accuracy:0.564103
+Sentivity:0.578947
+Specificity:0.550000
+Precision:0.550000
+Recall:0.578947
+F-measure:0.564103
+MCC:0.128947
+
+############Experiment:92################
+HiddenLayer:[2 2]	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[10 7;9 13]
+Accuracy:0.589744
+Sentivity:0.526316
+Specificity:0.650000
+Precision:0.588235
+Recall:0.526316
+F-measure:0.555556
+MCC:0.177724
+
+############Experiment:93################
+HiddenLayer:[4 4]	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[11 8;8 12]
+Accuracy:0.589744
+Sentivity:0.578947
+Specificity:0.600000
+Precision:0.578947
+Recall:0.578947
+F-measure:0.578947
+MCC:0.178947
+
+############Experiment:94################
+HiddenLayer:[6 6]	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[12 10;7 10]
+Accuracy:0.564103
+Sentivity:0.631579
+Specificity:0.500000
+Precision:0.545455
+Recall:0.631579
+F-measure:0.585366
+MCC:0.132630
+
+############Experiment:95################
+HiddenLayer:[8 8]	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[13 11;6 9]
+Accuracy:0.564103
+Sentivity:0.684211
+Specificity:0.450000
+Precision:0.541667
+Recall:0.684211
+F-measure:0.604651
+MCC:0.137888
+
+############Experiment:96################
+HiddenLayer:[10 10]	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[10 11;9 9]
+Accuracy:0.487179
+Sentivity:0.526316
+Specificity:0.450000
+Precision:0.476190
+Recall:0.526316
+F-measure:0.500000
+MCC:-0.023747
+
+############Experiment:97################
+HiddenLayer:[12 12]	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[8 7;11 13]
+Accuracy:0.538462
+Sentivity:0.421053
+Specificity:0.650000
+Precision:0.533333
+Recall:0.421053
+F-measure:0.470588
+MCC:0.073000
+
+############Experiment:98################
+HiddenLayer:[14 14]	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[11 9;8 11]
+Accuracy:0.564103
+Sentivity:0.578947
+Specificity:0.550000
+Precision:0.550000
+Recall:0.578947
+F-measure:0.564103
+MCC:0.128947
+
+############Experiment:99################
+HiddenLayer:[4 2]	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[11 8;8 12]
+Accuracy:0.589744
+Sentivity:0.578947
+Specificity:0.600000
+Precision:0.578947
+Recall:0.578947
+F-measure:0.578947
+MCC:0.178947
+
+############Experiment:100################
+HiddenLayer:[6 3]	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[12 8;7 12]
+Accuracy:0.615385
+Sentivity:0.631579
+Specificity:0.600000
+Precision:0.600000
+Recall:0.631579
+F-measure:0.615385
+MCC:0.231579
+
+############Experiment:101################
+HiddenLayer:[8 4]	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[11 11;8 9]
+Accuracy:0.512821
+Sentivity:0.578947
+Specificity:0.450000
+Precision:0.500000
+Recall:0.578947
+F-measure:0.536585
+MCC:0.029179
+
+############Experiment:102################
+HiddenLayer:[10 5]	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[9 10;10 10]
+Accuracy:0.487179
+Sentivity:0.473684
+Specificity:0.500000
+Precision:0.473684
+Recall:0.473684
+F-measure:0.473684
+MCC:-0.026316
+
+############Experiment:103################
+HiddenLayer:[12 6]	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[10 10;9 10]
+Accuracy:0.512821
+Sentivity:0.526316
+Specificity:0.500000
+Precision:0.500000
+Recall:0.526316
+F-measure:0.512821
+MCC:0.026316
+
+############Experiment:104################
+HiddenLayer:[14 7]	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[10 8;9 12]
+Accuracy:0.564103
+Sentivity:0.526316
+Specificity:0.600000
+Precision:0.555556
+Recall:0.526316
+F-measure:0.540541
+MCC:0.126650
+
+############Experiment:105################
+HiddenLayer:[8 4 2]	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[11 11;8 9]
+Accuracy:0.512821
+Sentivity:0.578947
+Specificity:0.450000
+Precision:0.500000
+Recall:0.578947
+F-measure:0.536585
+MCC:0.029179
+
+############Experiment:106################
+HiddenLayer:[12 6 3]	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[13 8;6 12]
+Accuracy:0.641026
+Sentivity:0.684211
+Specificity:0.600000
+Precision:0.619048
+Recall:0.684211
+F-measure:0.650000
+MCC:0.284961
+
+############Experiment:107################
+HiddenLayer:[2 2 2]	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[15 8;4 12]
+Accuracy:0.692308
+Sentivity:0.789474
+Specificity:0.600000
+Precision:0.652174
+Recall:0.789474
+F-measure:0.714286
+MCC:0.395773
+
+############Experiment:108################
+HiddenLayer:[4 4 4]	 sparsityParam:0.100000	 lambda:0.000010	 beta:3.000000
+confusion_matrix:[11 7;8 13]
+Accuracy:0.615385
+Sentivity:0.578947
+Specificity:0.650000
+Precision:0.611111
+Recall:0.578947
+F-measure:0.594595
+MCC:0.229552
+

@@ -1,0 +1,36 @@
+############Experiment:1################
+Dist measure: euclidean 
+HiddenLayer:18	 sparsityParam:0.010000	 lambda:0.000300	 beta:3.000000
+confusion_matrix:[9 5;10 15]
+Accuracy:0.615385
+Sentivity:0.473684
+Specificity:0.750000
+Precision:0.642857
+Recall:0.473684
+F-measure:0.545455
+MCC:0.233074
+
+############Experiment:2################
+Dist measure: minkowski 
+HiddenLayer:18	 sparsityParam:0.010000	 lambda:0.000300	 beta:3.000000
+confusion_matrix:[10 5;9 15]
+Accuracy:0.641026
+Sentivity:0.526316
+Specificity:0.750000
+Precision:0.666667
+Recall:0.526316
+F-measure:0.588235
+MCC:0.283887
+
+############Experiment:3################
+Dist measure: chebychev 
+HiddenLayer:18	 sparsityParam:0.010000	 lambda:0.000300	 beta:3.000000
+confusion_matrix:[7 5;12 15]
+Accuracy:0.564103
+Sentivity:0.368421
+Specificity:0.750000
+Precision:0.583333
+Recall:0.368421
+F-measure:0.451613
+MCC:0.128247
+

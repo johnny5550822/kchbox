@@ -1,0 +1,55 @@
+############Experiment:1################
+k:3.000000 	 dist_measure:euclidean 	 
+confusion_matrix:[8 7;12 12]
+Accuracy:0.512821
+Sentivity:0.400000
+Specificity:0.631579
+Precision:0.533333
+Recall:0.400000
+F-measure:0.457143
+MCC:0.032444
+
+############Experiment:2################
+k:3.000000 	 dist_measure:minkowski 	 
+confusion_matrix:[8 7;12 12]
+Accuracy:0.512821
+Sentivity:0.400000
+Specificity:0.631579
+Precision:0.533333
+Recall:0.400000
+F-measure:0.457143
+MCC:0.032444
+
+############Experiment:3################
+k:3.000000 	 dist_measure:chebychev 	 
+confusion_matrix:[11 8;9 11]
+Accuracy:0.564103
+Sentivity:0.550000
+Specificity:0.578947
+Precision:0.578947
+Recall:0.550000
+F-measure:0.564103
+MCC:0.128947
+
+############Experiment:4################
+k:3.000000 	 dist_measure:jaccard 	 
+confusion_matrix:[12 5;8 14]
+Accuracy:0.666667
+Sentivity:0.600000
+Specificity:0.736842
+Precision:0.705882
+Recall:0.600000
+F-measure:0.648649
+MCC:0.339533
+
+############Experiment:5################
+k:3.000000 	 dist_measure:hamming 	 
+confusion_matrix:[12 6;8 13]
+Accuracy:0.641026
+Sentivity:0.600000
+Specificity:0.684211
+Precision:0.666667
+Recall:0.600000
+F-measure:0.631579
+MCC:0.284961
+
