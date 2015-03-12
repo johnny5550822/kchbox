@@ -27,12 +27,13 @@ function fv = generate_features_vector(dia,systo)
     f14 = (sum((systo-repmat(f7,[1 size(systo,2)])).^4,2)/size(systo,2))./(f10.^4);
     
     % number of peaks
-    [a,f15,f16] = convertSeriesToBinary(dia);
-    [b,f17,f18] = convertSeriesToBinary(systo);
+    [a,f15,f16,f17] = convertSeriesToBinary(dia);
+    [b,f18,f19,f20] = convertSeriesToBinary(systo);
     
     %combine all feature
-    fv = [f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f15 f16 f17 f18];
-    fv = [f15 f16 f17 f18];
+    fv = [f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f15 f16 f18 f19];
+    
+    %fv = [f15 f16 f17 f18];
     %###########MEthod 3: Basic features from the difference of systolic
     %and diastolic pressure
     diff = [systo - dia];
@@ -42,6 +43,7 @@ function fv = generate_features_vector(dia,systo)
     ff4 = std(diff,[],2);
     [a,ff5,ff6] = convertSeriesToBinary(diff);
     
+    % fv = [fv ff1 ff2 ff3 ff4 ff5 ff5];
 
     % normalize to range between 0 and 1
     fv = (fv - repmat(min(fv),[size(fv,1) 1]))./repmat((max(fv)-min(fv)),[size(fv,1) 1]);

@@ -3,7 +3,7 @@
 % classifier instead of softmax
 
 function [pred] = kchbox_ae_knn(validation_data,train_data, label,...
-            numClasses,hiddenSize, sparsityParam,lambda,beta,distance_measure)
+            numClasses,hiddenSize, sparsityParam,lambda,beta,distance_measure,k)
 
 %--------------  Obtain random parameters theta
 inputSize = size(train_data,2);
@@ -70,7 +70,6 @@ trainFeatures = [ones(1,size(trainFeatures,2));trainFeatures];  %21x35
 testFeatures = [ones(1,size(testFeatures,2));testFeatures]; %21x4
 
 %------------------------------- Prediction using Knn and the new features
-k=3;
 testFeatures = testFeatures';
 trainFeatures = trainFeatures';
 pred = zeros(1,size(testFeatures,1));

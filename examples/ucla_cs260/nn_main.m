@@ -22,7 +22,7 @@ numClasses = 2;
 hiddenLayersSizes = {[5],[10],[20],[5 5],[10 5],[10 10],[20 5],...
     [20 10], [20 20]}; % numel(hiddenLayersSize) = number of hidden layers
 
-lambdas = [5e-3 1e-3 5e-4 1e-4 5e-5 1e-5];         % weight decay parameter 
+lambdas = [1e-2 1e-3 1e-4 1e-5];         % weight decay parameter 
 sparsityParam = 0.1;   % FOR AE, desired average activation of the hidden units.
                        % (This was denoted by the Greek alphabet rho, which looks like a lower-case "p",
 		               %  in the lecture notes). 
@@ -38,7 +38,7 @@ addpath neural_network/minFunc/
 %For debug
 Debug = true;
 if Debug
-    hiddenLayersSizes = {[5]}; % numel(hiddenLayersSize) = number of hidden layers
+    hiddenLayersSizes = {[5 5]}; % numel(hiddenLayersSize) = number of hidden layers
     lambdas = [1e-4];         % weight decay parameter 
  
     % Create file to store result

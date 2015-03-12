@@ -6,7 +6,7 @@
 % output: mx(n-1), because there will be one missing, number of peaks
 % (maximum or minimum)
 
-function [states,max_peaks,min_peaks] = convertSeriesToBinary(t_s)
+function [states,max_peaks,min_peaks,approx_freq] = convertSeriesToBinary(t_s)
     states = zeros(size(t_s,1),size(t_s,2)-1);    % to store binary 0(decreasing) or 1(increasing)
     max_peaks = zeros(size(t_s,1),1);
     min_peaks = zeros(size(t_s,1),1);
@@ -33,4 +33,6 @@ function [states,max_peaks,min_peaks] = convertSeriesToBinary(t_s)
         end
     end
 
+    % approximate freq
+    approx_freq = (max_peaks + min_peaks)/2; %since one circle has one max and one min peak
 end
