@@ -1,8 +1,45 @@
 %% Sparse Autoencoder which can be used as dimenion reduction in a non-linear fashion
 
-function [pred,prob] = kchbox_ae(validation_data,train_data, label,...
-            numClasses,hiddenSize, sparsityParam,lambda,beta)
+function [pred,prob] = kchbox_ae(validation_data,train_data,label,...
+            numClasses,hiddenSize, varargin)
+        
+    %parameters for function
+    if (numel(varargin) < 1 || isempty(varargin{1}))
+        options.maxIter = 400;
+        options.Method = 'lbfgs'; % Here, we use L-BFGS to optimize our cost
+                          % function. Generally, for minFunc to work, you
+                          % need a function pointer with two outputs: the
+                          % function value and the gradient. In our problem,
+                          % sparseAutoencoderCost.m satisfies this.
+        options.display = 'on';
+    else
+        options = varargin{1};
+    end
+    if (numel(varargin) < 2 || isempty(varargin{2}))
+        softmax_lambda = 1e-4;   
+    else
+        softmax_lambda = varargin{2};
+    end
+    if (numel(varargin) < 3 || isempty(varargin{3}))
+        sparsityParam = 0.05;   % desired average activation of the hidden units.  
+    else
+        sparsityParam = varargin{3};
+    end
+    if (numel(varargin) < 4 || isempty(varargin{4}))
+        lambda = 3e-5;         % weight decay parameter         
+    else
+        lambda = varargin{4};
+    end
+    if (numel(varargin) < 5 || isempty(varargin{5}))
+        beta = 3;              % weight of sparsity penalty term 
+    else
+        beta = varargin{5};
+    end
 
+    
+    %----------------------------------------------------------------------
+
+        
 %--------------  Obtain random parameters theta
 inputSize = size(train_data,2);
 theta = initializeParameters_ae(hiddenSize, inputSize);
@@ -33,17 +70,6 @@ if Debug
 end
 
 %----------------------- Step4 Train an autoencoder
-
-%  Use minFunc to minimize the function
-addpath minFunc/
-options.Method = 'lbfgs'; % Here, we use L-BFGS to optimize our cost
-                          % function. Generally, for minFunc to work, you
-                          % need a function pointer with two outputs: the
-                          % function value and the gradient. In our problem,
-                          % sparseAutoencoderCost.m satisfies this.
-options.maxIter = 100;	  % Maximum number of iterations of L-BFGS to run 
-options.display = 'on';
-
 [opttheta, cost] = minFunc( @(p) sparseAutoencoderCost(p, ...
                                    inputSize, hiddenSize, ...
                                    lambda, sparsityParam, ...
@@ -62,8 +88,6 @@ testFeatures = feedForwardAutoencoder(opttheta, hiddenSize, inputSize, ...
 
 %------------------------------- Step 6: Train a softmax classifier
 clc;
-options.maxIter = 100;
-softmax_lambda = 1e-4;
 
 % With obtained features
 trainFeatures = [ones(1,size(trainFeatures,2));trainFeatures];  %for base term

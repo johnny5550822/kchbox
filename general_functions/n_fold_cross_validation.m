@@ -93,7 +93,10 @@ function [acc,sen,spec,pre,recall,f_measure,mcc,confusion_matrix,probs,label] ..
         pred_validation = zeros(1,num_validation);        
         if strcmp(classifier_type,'softmax')
             [pred_validation,prob] = kchbox_softmax(validation_data,train_data,train_label,...
-                numClasses,inputSize,options,softmax_lambda);
+                numClasses,inputSize,options,softmax_lambda,sparsityParam,lambda,beta);
+        else if strcmp(classifier_type,'sparse_ae')
+            [pred_validation,prob] = kchbox_ae(validation_data,train_data,train_label,...
+                numClasses,inputSize,options,softmax_lambda,sparsityParam,lambda,beta);
         end
         
         % Generate evaluation matrice, such as accuracy. Also, for ROC

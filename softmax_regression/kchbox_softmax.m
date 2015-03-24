@@ -6,6 +6,17 @@ function [pred,prob,softmaxModel] = kchbox_softmax(testData,trainData, trainData
 
     %parameters for function
     if (numel(varargin) < 1 || isempty(varargin{1}))
+        options.maxIter = 400;
+        options.Method = 'lbfgs'; % Here, we use L-BFGS to optimize our cost
+                          % function. Generally, for minFunc to work, you
+                          % need a function pointer with two outputs: the
+                          % function value and the gradient. In our problem,
+                          % sparseAutoencoderCost.m satisfies this.
+        options.display = 'on';
+    else
+        options = varargin{2};
+    end
+    if (numel(varargin) < 2 || isempty(varargin{2}))
         softmax_lambda = 1e-4;
     else
         softmax_lambda = varargin{1};
