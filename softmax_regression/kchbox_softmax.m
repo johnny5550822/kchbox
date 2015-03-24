@@ -1,7 +1,7 @@
 %% softmax classifier
 % The functions softmaxCost.m, softmaxPredict.m, softmaxTrain.m are based on Stanford UFLDL tutorial
 
-function [pred,prob] = kchbox_softmax(testData,trainData, trainData_label,...
+function [pred,prob,softmaxModel] = kchbox_softmax(testData,trainData, trainData_label,...
     numClasses,inputSize, options,varargin)
 
     %parameters for function
