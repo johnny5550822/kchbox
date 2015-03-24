@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 By King Chung Ho (Johnny), SID:403833407
 Note: Each function are commented in details. If you have any questions, please contact me: johnny5550822@g.ucla.edu
 1. The main functions are the core functions to run each classifier: main_ae, main_ae_knn,main_knn,main_nn. Within these main functions, you can control the hyperparameters for cross-validation.
