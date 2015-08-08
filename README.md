@@ -1,3 +1,5 @@
+# About
+
 If you have heard about "machine learning" but you don't know how to implement them and how to use them, this is a Matlab repository for you. 
 
 Kchbox contains several standalone implementation of fundamental and famous machine learning  algoirthms, such as KNN, neural network (autoencoder), etc.
